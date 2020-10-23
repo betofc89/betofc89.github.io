@@ -2,26 +2,6 @@ import * as THREE from '../vendor/three/build/three.module.js';
 import {OrbitControls} from '../vendor/three/examples/jsm/controls/OrbitControls.js';
 import {GLTFLoader} from '../vendor/three/examples/jsm/loaders/GLTFLoader.js';
 
-// import {OBJLoader2} from '../vendor/three/examples/jsm/loaders/OBJLoader2.js';
-// import {MTLLoader} from '../vendor/three/examples/jsm/loaders/MTLLoader.js';
-// import {MtlObjBridge} from '../vendor/three/examples/jsm/loaders/obj2/bridge/MtlObjBridge.js';
-
- // document.getElementById("link_preto").addEventListener("click", myFunction("E3041_004_GLTF_preto_3.gltf"), false);
-// document.getElementById("link_amarelo").addEventListener("click", myFunction("e3041_amarelo.glb"), false);
-
-// document.getElementById("link_preto").addEventListener("click",testeFuncao("linkPreto"),false);
-
-// function testeFuncao(nomeLink){
-	// window.alert(nomeLink);
-// }
-
-// function myFunction(nomeArquivo) {
-  // window.alert(nomeArquivo);
-  // main(nomeArquivo);
-// }
-
-
-// function main(nomeArquivo){
 function main(){
 
 	const canvas = document.querySelector('#c');
@@ -32,19 +12,16 @@ function main(){
 	const near = 0.1;
 	const far = 100;
 	const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-	camera.position.set(-3, 3, 3);
+	camera.position.set(-3, 1, 3);
 	  
 	const controls = new OrbitControls(camera, canvas);
-	controls.target.set(0, 2, 0);
+	controls.target.set(0, 0, 0);
 	controls.update();
 
 	const scene = new THREE.Scene();
 	scene.background = new THREE.Color(0xa1a1a1);
-
 	
-	// --------------------------------------------------------------------------------------
-	// --------------------------------------------------------------------------------------
-	// Config_light_01
+
 	// Configuração mais interessante até agora:
 	
 	// Luzes da frente
@@ -103,6 +80,8 @@ function main(){
 		scene.add(light.target);
 	}
 	
+	
+	
 	{
 		const color = 0xffe6a6;
 		const intensity = 3;
@@ -113,6 +92,8 @@ function main(){
 		scene.add(light);
 		scene.add(light.target);
 	}
+	
+	
 	
 	{
 		const color = 0x99a5ff;
@@ -126,27 +107,57 @@ function main(){
 	}
 	
 	
-	// Fim da Config_light_01
-	// --------------------------------------------------------------------------------------
-	// --------------------------------------------------------------------------------------
 	
 	{
 		const loader = new GLTFLoader();
-		// loader.load('./assets/models/E3041_004_GLTF_preto_3.gltf', function(gltf){
-		// loader.load('./assets/models/e3041_amarelo.glb', function(gltf){
-		loader.load('./assets/models/P7020_005_BLACK_GLTF_1.glb', function(gltf){
-		// loader.load('./assets/models/P7020_005_GLTF_1.glb', function(gltf){
-		// loader.load('./assets/models/P7023_12_GLTF_1.glb', function(gltf){
+		
+		// Primeira leva
+		// const modelo = './assets/models/prim_leva/e3041/E3041_004_GLTF_preto_3.gltf';
+		// const modelo = './assets/models/prim_leva/e3041/e3041_amarelo.glb';
+		// const modelo = './assets/models/prim_leva/p7020/P7020_005_BLACK_GLTF_1.glb';
+		// const modelo = './assets/models/prim_leva/p7020/P7020_005_GLTF_1.glb';
+		// const modelo = './assets/models/prim_leva/p7023/P7023_12_GLTF_1.glb';
+		
+		// Segunda leva
+		// const modelo = './assets/models/seg_leva/d300/d300_001_3.gltf';
+		// const modelo = './assets/models/seg_leva/e3010s/e3010s_001.gltf';
+		// const modelo = './assets/models/seg_leva/e3064/e3064_001.gltf';
+		const modelo = './assets/models/seg_leva/m600/m600_001_novo.gltf';
+		document.getElementById("modelo_nome").innerHTML = modelo;
+		loader.load(modelo, function(gltf){
 		
 		// loader.load('./assets/models/' + nomeArquivo, function(gltf){
-			var car_0 = gltf.scene.children[0];
-			car_0.position.y = 2;
-			var car_1 = gltf.scene.children[1];
-			car_1.position.y = 2;
+			// var car_0 = gltf.scene.children[0];
+			// car_0.position.y = 2;
+			// var car_1 = gltf.scene.children[1];
+			// car_1.position.y = 2;
 			//car.scale.set(0.5,0.5,0.5);
+		
 		scene.add(gltf.scene);
+		document.getElementById("testeA").innerHTML = scene.children.length;
+		// window.alert(scene.children[3]);
+		// window.alert(gltf.scene.children.length);
+		// window.alert(gltf.scene.children[3].position.x);
+		
+		
+		document.getElementById("botaoMudarXMais").addEventListener("click", function() {
+			//document.getElementById("demo").innerHTML = "Hello World";
+				const filho = document.getElementById("filhos").value;
+				gltf.scene.children[filho].position.x += 1/10;
+		});
+		
+		document.getElementById("botaoMudarXMenos").addEventListener("click", function() {
+			//document.getElementById("demo").innerHTML = "Hello World";
+				const filho = document.getElementById("filhos").value;
+				gltf.scene.children[filho].position.x -= 1/10;
+		});
+		
+		document.getElementById("filhos").min = 0;
+		document.getElementById("filhos").max = gltf.scene.children.length-1;
+		document.getElementById("filhos").value = gltf.scene.children.length-1;
+		
 		renderer.render(scene,camera);
-	});
+		});
 	}
 
 	function resizeRendererToDisplaySize(renderer) {
@@ -183,9 +194,16 @@ function main(){
 
 
 		requestAnimationFrame(render);
+		
+		document.getElementById("camera_posX").innerHTML = camera.position.x.toFixed(2);
+		document.getElementById("camera_posY").innerHTML = camera.position.y.toFixed(2);
+		document.getElementById("camera_posZ").innerHTML = camera.position.z.toFixed(2);
+		
+		
 	}
 
 	requestAnimationFrame(render);
+	
 }
 
 function teste(){

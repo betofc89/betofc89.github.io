@@ -13,15 +13,41 @@
 </head>
 
 <body>
-
-	<div id="teste" onClick="teste()">Teste</div>
 	
-	<script>
-		function teste(){
-			window.alert("teste");
-		}
-	</script>
-	<canvas id="c"></canvas>
+	
+	<div id="divCanvas">
+		<canvas id="c"></canvas>
+	</div>
+	
+	<input type="number" id="filhos" min="0" max="3">
+		<!-- <input type="button" id="botaoMudarXMenos">-</input> -->
+		<!-- <input type="button" id="botaoMudarXMais">+</input> -->
+		<button id="botaoMudarXMenos">-</button>
+		<button id="botaoMudarXMais">+</button>
+	
+	<div id="divInfo">
+		<table>
+			<tr><td colspan="2">camera</td></tr>
+			<tr><td>x</td><td><div id="camera_posX"></div></td></tr>
+			<tr><td>y</td><td><div id="camera_posY"></div></td></tr>
+			<tr><td>z</td><td><div id="camera_posZ"></div></td></tr>
+		</table>
+		
+		<table>
+			<tr><td colspan="2">modelo</td></tr>
+			<tr><td colspan="2"><div id="modelo_nome"></div></td></tr>
+			<tr><td>x</td><td><div id="modelo_posX"></div></td></tr>
+			<tr><td>y</td><td><div id="modelo_posY"></div></td></tr>
+			<tr><td>z</td><td><div id="modelo_posZ"></div></td></tr>
+		</table>
+		
+		<table>
+			<tr><td>scene children</td><td id="testeA"></td></tr>
+		</table>
+		
+	</div>
+	
+	
 </body>
 
 </html>

@@ -23,9 +23,22 @@ h1 {
   z-index: 1;
 }
 
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+#divCanvas {
+	background-color: black;
+}
+
+#divInfo {
+	background-color: gray;
+}
+
 #c {
   /* tell our scene container to take up the full page */
-  margin-top: 150px;
+  margin-top: 10px;
   width: 600px;
   height: 600px;
 
