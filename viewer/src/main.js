@@ -118,7 +118,8 @@ function main(){
 		// const modelo = './assets/models/seg_leva/d300/d300_001_3.gltf';
 		// const modelo = './assets/models/seg_leva/e3010s/e3010s_001.gltf';
 		// const modelo = './assets/models/seg_leva/e3064/e3064_001.gltf';
-		const modelo = './assets/models/seg_leva/m600/m600_001_i.gltf';
+		// const modelo = './assets/models/seg_leva/m600/m600_001_i.gltf';
+		const modelo = './assets/models/seg_leva/m600/m600_003_zg.gltf';
 		document.getElementById("modelo_nome").innerHTML = modelo;
 		loader.load(modelo, function(gltf){
 		
