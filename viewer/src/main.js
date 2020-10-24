@@ -5,7 +5,7 @@ import {GLTFLoader} from '../vendor/three/examples/jsm/loaders/GLTFLoader.js';
 function main(){
 
 	const canvas = document.querySelector('#c');
-	const renderer = new THREE.WebGLRenderer({canvas});
+	const renderer = new THREE.WebGLRenderer({antialias:true, canvas});
 	
 	const fov = 45;
 	const aspect = 1;  // the canvas default
@@ -79,9 +79,7 @@ function main(){
 		scene.add(light);
 		scene.add(light.target);
 	}
-	
-	
-	
+
 	{
 		const color = 0xffe6a6;
 		const intensity = 3;
@@ -92,8 +90,6 @@ function main(){
 		scene.add(light);
 		scene.add(light.target);
 	}
-	
-	
 	
 	{
 		const color = 0x99a5ff;
@@ -122,43 +118,145 @@ function main(){
 		// const modelo = './assets/models/seg_leva/d300/d300_001_3.gltf';
 		// const modelo = './assets/models/seg_leva/e3010s/e3010s_001.gltf';
 		// const modelo = './assets/models/seg_leva/e3064/e3064_001.gltf';
-		const modelo = './assets/models/seg_leva/m600/m600_001_novo.gltf';
+		const modelo = './assets/models/seg_leva/m600/m600_001_i.gltf';
 		document.getElementById("modelo_nome").innerHTML = modelo;
 		loader.load(modelo, function(gltf){
 		
-		// loader.load('./assets/models/' + nomeArquivo, function(gltf){
-			// var car_0 = gltf.scene.children[0];
-			// car_0.position.y = 2;
-			// var car_1 = gltf.scene.children[1];
-			// car_1.position.y = 2;
-			//car.scale.set(0.5,0.5,0.5);
+			// loader.load('./assets/models/' + nomeArquivo, function(gltf){
+				// var car_0 = gltf.scene.children[0];
+				// car_0.position.y = 2;
+				// var car_1 = gltf.scene.children[1];
+				// car_1.position.y = 2;
+				//car.scale.set(0.5,0.5,0.5);
+			
+			scene.add(gltf.scene);
+			document.getElementById("testeA").innerHTML = scene.children.length;
+			// window.alert(scene.children[3]);
+			// window.alert(gltf.scene.children.length);
+			// window.alert(gltf.scene.children[3].position.x);
+			
+			
+			document.getElementById("botaoMudarXMais").addEventListener("click", function() {
+				//document.getElementById("demo").innerHTML = "Hello World";
+					const filho = document.getElementById("filhos").value;
+					gltf.scene.children[filho].position.x += 1/10;
+			});
+			
+			document.getElementById("botaoMudarXMenos").addEventListener("click", function() {
+				//document.getElementById("demo").innerHTML = "Hello World";
+					const filho = document.getElementById("filhos").value;
+					gltf.scene.children[filho].position.x -= 1/10;
+			});
+			
+			document.getElementById("filhos").min = 0;
+			document.getElementById("filhos").max = gltf.scene.children.length-1;
+			document.getElementById("filhos").value = gltf.scene.children.length-1;
+			
+			renderer.render(scene,camera);
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			var select = document.getElementById('fruta');
+
+			function logValue() {
+				switch (this.value) {
+					case 'm600':
+						console.log('m600');
+						
+						// console.log(gltf.scene.name);
+						
+						// scene.remove(gltf.scene.children[0]);
+						// scene.remove(scene.children[0]);
+						
+						// ESSE É O QUE DEU CERTO! ESSE CÓDIGO ABAIXO REMOVE A PRIMEIRA PEÇA (PEÇA ZERO). OU SEJA, TEM QUE ACESSAR USANDO O gltf.scene....
+						// gltf.scene.remove(gltf.scene.children[0]);
+						
+						for (const item in gltf.scene.children) {
+							// console.log(item.name);
+							gltf.scene.remove(item);
+						}
+						
+						
+						
+						break;
+					case 'guava':
+						console.log('option 2 selected');
+						break;
+					case 'lychee':
+						console.log('You chose option 3, didn\'t you?');
+						break;
+				}
+			}
+
+			select.addEventListener('change', logValue, false); 
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 		
-		scene.add(gltf.scene);
-		document.getElementById("testeA").innerHTML = scene.children.length;
-		// window.alert(scene.children[3]);
-		// window.alert(gltf.scene.children.length);
-		// window.alert(gltf.scene.children[3].position.x);
-		
-		
-		document.getElementById("botaoMudarXMais").addEventListener("click", function() {
-			//document.getElementById("demo").innerHTML = "Hello World";
-				const filho = document.getElementById("filhos").value;
-				gltf.scene.children[filho].position.x += 1/10;
 		});
 		
-		document.getElementById("botaoMudarXMenos").addEventListener("click", function() {
-			//document.getElementById("demo").innerHTML = "Hello World";
-				const filho = document.getElementById("filhos").value;
-				gltf.scene.children[filho].position.x -= 1/10;
-		});
 		
-		document.getElementById("filhos").min = 0;
-		document.getElementById("filhos").max = gltf.scene.children.length-1;
-		document.getElementById("filhos").value = gltf.scene.children.length-1;
 		
-		renderer.render(scene,camera);
-		});
-	}
+		
+		
+		
+		
+		
+
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
 
 	function resizeRendererToDisplaySize(renderer) {
 		const canvas = renderer.domElement;
@@ -204,10 +302,24 @@ function main(){
 
 	requestAnimationFrame(render);
 	
+	
+	
+	
+
+}
+	
+	
+	
+	
+	
+	
 }
 
 function teste(){
 	window.alert("teste");
 }
+
+
+
 
 main();
