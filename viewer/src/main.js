@@ -2,8 +2,12 @@ import * as THREE from '../vendor/three/build/three.module.js';
 import {OrbitControls} from '../vendor/three/examples/jsm/controls/OrbitControls.js';
 import {GLTFLoader} from '../vendor/three/examples/jsm/loaders/GLTFLoader.js';
 
-function main(){
 
+
+
+
+function main(){
+	
 	const canvas = document.querySelector('#c');
 	const renderer = new THREE.WebGLRenderer({antialias:true, canvas});
 	
@@ -110,160 +114,164 @@ function main(){
 
 	}
 	
-	{
-		// const loader = new GLTFLoader();
+	
+	const loader = new GLTFLoader();
+	
+	// Concluídas
+	// const modelo = './assets/models/seg_leva/m600/m600_004_h.gltf'; 
+	// const modelo = './assets/models/seg_leva/e3010s/e3010s_004_018.gltf';
+	const modelo = './assets/models/seg_leva/e3064/e3064_003_005.gltf';
+	
+	loader.load(modelo, function(gltf){
 		
-		// Concluídas
-		// const modelo = './assets/models/seg_leva/m600/m600_003_zk.gltf'; 
-		// const modelo = './assets/models/seg_leva/e3010s/e3010s_004_018.gltf';
-		// const modelo = './assets/models/seg_leva/e3064/e3064_003_004.gltf';
+		scene.add(gltf.scene);
 		
-		// loader.load(modelo, function(gltf){
-			
-			// scene.add(gltf.scene);
-			
-			// {
-				// var select = document.getElementById('fruta');
+		{
+			var select = document.getElementById('modelo_fechadura');
+			function mostrarModelo() {
+				switch (this.value) {
+					case 'm600':
+						// while(gltf.scene.children.length > 0) {
+							// gltf.scene.remove(gltf.scene.children[gltf.scene.children.length-1]);
+						// }
 
-				// function mostrarModelo() {
-					
-					// switch (this.value) {
-						// case 'm600':
-							// while(gltf.scene.children.length > 0) {
-								// gltf.scene.remove(gltf.scene.children[gltf.scene.children.length-1]);
-							// }
+						// if(gltf.scene) gltf.scene.parent.remove(gltf.scene);
 
-							// // const modelo = './assets/models/seg_leva/m600/m600_003_zk.gltf'; 
-							// console.log("m600");
-							// loader.load('./assets/models/seg_leva/m600/m600_003_zk.gltf', function(gltf){			
-								// scene.add(gltf.scene);
-							// });
-							
-							// break;
-						// case 'e3010s':
-							// while(gltf.scene.children.length > 0) {
-								// gltf.scene.remove(gltf.scene.children[gltf.scene.children.length-1]);
-							// }
-
-							// loader.load('./assets/models/seg_leva/e3010s/e3010s_004_018.gltf', function(gltf){			
-								// scene.add(gltf.scene);
-							// });
-							// break;
+						loader.load('./assets/models/seg_leva/m600/m600_004_h.gltf', function(gltf){			
+							scene.add(gltf.scene);
+						});
 						
-						// case 'e3064':
-							// while(gltf.scene.children.length > 0) {
-								// gltf.scene.remove(gltf.scene.children[gltf.scene.children.length-1]);
-							// }
+						break;
+					case 'e3010s':
+						// while(gltf.scene.children.length > 0) {
+							// gltf.scene.remove(gltf.scene.children[gltf.scene.children.length-1]);
+						// }
 
-							// loader.load('./assets/models/seg_leva/e3064/e3064_003_004.gltf', function(gltf){			
-								// scene.add(gltf.scene);
-							// });
-							// break;
+						// if(gltf.scene) gltf.scene.parent.remove(gltf.scene);
+
+						loader.load('./assets/models/seg_leva/e3010s/e3010s_004_019.gltf', function(gltf){			
+							scene.add(gltf.scene);
+						});
+						break;
+					
+					case 'e3064':
+						// while(gltf.scene.children.length > 0) {
+							// gltf.scene.remove(gltf.scene.children[gltf.scene.children.length-1]);
+						// }
+
+						// if(gltf.scene) gltf.scene.parent.remove(gltf.scene);
+
+						loader.load('./assets/models/seg_leva/e3064/e3064_003_005.gltf', function(gltf){			
+							scene.add(gltf.scene);
+						});
+						break;
+				}
+			}
+			
+			select.addEventListener('change', mostrarModelo, false); 
+		}
+		
+		renderer.render(scene,camera);
+	});
+	
+	// --------------------------------------------------------
+	
+	// const loader = new GLTFLoader();
+	
+	// const modelo = './assets/models/seg_leva/e3064/e3064_003_004.gltf';
+	
+	// loader.load(modelo, function(gltf){
+		// scene.add(gltf.scene);
+	// });
+
+	// {
+		// var select = document.getElementById('modelo_fechadura');
+
+		// function mostrarModelo() {
+
+			// switch (this.value) {
+				// case 'm600':
+					// while(gltf.scene.children.length > 0) {
+						// gltf.scene.remove(gltf.scene.children[gltf.scene.children.length-1]);
 					// }
-				// }
-				
-				// select.addEventListener('change', mostrarModelo, false); 
-			// }
-			
-			// renderer.render(scene,camera);
-		// });
-		
-		// --------------------------------------------------------
-		
-		// const loader = new GLTFLoader();
-		
-		// const modelo = './assets/models/seg_leva/e3064/e3064_003_004.gltf';
-		
-		// loader.load(modelo, function(gltf){
-			// scene.add(gltf.scene);
-		// });
 
-		// {
-			// var select = document.getElementById('modelo_fechadura');
-
-			// function mostrarModelo() {
-
-				// switch (this.value) {
-					// case 'm600':
-						// while(gltf.scene.children.length > 0) {
-							// gltf.scene.remove(gltf.scene.children[gltf.scene.children.length-1]);
-						// }
-
-						// const modelo = './assets/models/seg_leva/m600/m600_003_zk.gltf'; 
-						// console.log("m600");
-						// loader.load('./assets/models/seg_leva/m600/m600_003_zk.gltf', function(gltf){			
-							// scene.add(gltf.scene);
-						// });
-						
-						// break;
-					// case 'e3010s':
-						// while(gltf.scene.children.length > 0) {
-							// gltf.scene.remove(gltf.scene.children[gltf.scene.children.length-1]);
-						// }
-
-						// loader.load('./assets/models/seg_leva/e3010s/e3010s_004_018.gltf', function(gltf){			
-							// scene.add(gltf.scene);
-						// });
-						// break;
+					// const modelo = './assets/models/seg_leva/m600/m600_003_zk.gltf'; 
+					// console.log("m600");
+					// loader.load('./assets/models/seg_leva/m600/m600_003_zk.gltf', function(gltf){			
+						// scene.add(gltf.scene);
+					// });
 					
-					// case 'e3064':
-						// while(gltf.scene.children.length > 0) {
-							// gltf.scene.remove(gltf.scene.children[gltf.scene.children.length-1]);
-						// }
+					// break;
+				// case 'e3010s':
+					// while(gltf.scene.children.length > 0) {
+						// gltf.scene.remove(gltf.scene.children[gltf.scene.children.length-1]);
+					// }
 
-						// loader.load('./assets/models/seg_leva/e3064/e3064_003_004.gltf', function(gltf){			
-							// scene.add(gltf.scene);
-						// });
-						// break;
-				// }
+					// loader.load('./assets/models/seg_leva/e3010s/e3010s_004_018.gltf', function(gltf){			
+						// scene.add(gltf.scene);
+					// });
+					// break;
+				
+				// case 'e3064':
+					// while(gltf.scene.children.length > 0) {
+						// gltf.scene.remove(gltf.scene.children[gltf.scene.children.length-1]);
+					// }
+
+					// loader.load('./assets/models/seg_leva/e3064/e3064_003_004.gltf', function(gltf){			
+						// scene.add(gltf.scene);
+					// });
+					// break;
 			// }
-			
-			// select.addEventListener('change', mostrarModelo, false); 
 		// }
-
-
-		// ---------------------------
 		
-		
-		const gltfloader = new GLTFLoader();
-		const url = './assets/models/seg_leva/e3064/e3064_003_005.gltf';
-		// const url = './assets/models/seg_leva/e3010s/e3010s_004_019.gltf';
-		// const url = './assets/models/seg_leva/m600/m600_004_h.gltf';
-		// const url = './assets/models/seg_leva/d300/d300_001_3.gltf';
-		gltfloader.load(url, (gltf) => {
-			const root = gltf.scene;
-			scene.add(root);
-		});
+		// select.addEventListener('change', mostrarModelo, false); 
+	// }
 
 
-		function resizeRendererToDisplaySize(renderer) {
-			const canvas = renderer.domElement;
-			const width = canvas.clientWidth;
-			const height = canvas.clientHeight;
-			const needResize = canvas.width !== width || canvas.height !== height;
-			if (needResize) {
-			  renderer.setSize(width, height, false);
-			}
-			return needResize;
+	// ---------------------------
+	
+	
+	// const gltfloader = new GLTFLoader();
+	// const url = './assets/models/seg_leva/e3064/e3064_003_005.gltf';
+	// // const url = './assets/models/seg_leva/e3010s/e3010s_004_019.gltf';
+	// // const url = './assets/models/seg_leva/m600/m600_004_h.gltf';
+	// // const url = './assets/models/seg_leva/d300/d300_001_3.gltf';
+	// gltfloader.load(url, (gltf) => {
+		// const root = gltf.scene;
+		// scene.add(root);
+	// });
+
+
+	function resizeRendererToDisplaySize(renderer) {
+		const canvas = renderer.domElement;
+		const width = canvas.clientWidth;
+		const height = canvas.clientHeight;
+		const needResize = canvas.width !== width || canvas.height !== height;
+		if (needResize) {
+		  renderer.setSize(width, height, false);
+		}
+		return needResize;
+	}
+
+	function render() {
+		if (resizeRendererToDisplaySize(renderer)) {
+		  const canvas = renderer.domElement;
+		  camera.aspect = canvas.clientWidth / canvas.clientHeight;
+		  camera.updateProjectionMatrix();
 		}
 
-		function render() {
-			if (resizeRendererToDisplaySize(renderer)) {
-			  const canvas = renderer.domElement;
-			  camera.aspect = canvas.clientWidth / canvas.clientHeight;
-			  camera.updateProjectionMatrix();
-			}
+		renderer.render(scene, camera);
+		
+		// renderer.toneMapping = THREE.ACESFilmicToneMapping
+		renderer.toneMapping = THREE.ReinhardToneMapping;
+		// renderer.outputEncoding = THREE.sRGBEncoding
 
-			renderer.render(scene, camera);
-			
-			// renderer.toneMapping = THREE.ACESFilmicToneMapping
-			renderer.toneMapping = THREE.ReinhardToneMapping;
-			// renderer.outputEncoding = THREE.sRGBEncoding
-
-			requestAnimationFrame(render);
-		}
 		requestAnimationFrame(render);
 	}
+	requestAnimationFrame(render);
+	
 } // Fim da function main()
+
+
 
 main();
