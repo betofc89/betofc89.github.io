@@ -31,11 +31,15 @@ function main(){
 	{const color = 0xffe6a6;		const intensity = 3;		const light = new THREE.DirectionalLight(color, intensity);		light.position.set(4, 6, 2);		light.castShadow = true;		light.target.position.set(0, 2, 0);		scene.add(light);		scene.add(light.target);}
 	{const color = 0x99a5ff;		const intensity = 3;		const light = new THREE.DirectionalLight(color, intensity);		light.position.set(-4, 6, 2);		light.castShadow = true;		light.target.position.set(0, 2, 0);		scene.add(light);		scene.add(light.target);}
 	{const pointLight = new THREE.PointLight(0x666666, 10, 100 );		pointLight.position.set( -4, 0, 3 );		pointLight.castShadow = true;		scene.add( pointLight );}
+	
+	// Luz de baixo
+	{const pointLight = new THREE.PointLight(0x666666, 10, 100 );		pointLight.position.set( 0, -3, 0 ); pointLight.intensity = 7.5;		pointLight.castShadow = true;		scene.add( pointLight );}
+	
 	// Luzes de trás
 	{const color = 0xffffff;		const intensity = 5;		const light = new THREE.DirectionalLight(color, intensity);		light.position.set(0, 4, -8);		light.castShadow = true;		light.target.position.set(0, 2, 0);		scene.add(light);		scene.add(light.target);}
 	{const color = 0xffe6a6;		const intensity = 3;		const light = new THREE.DirectionalLight(color, intensity);		light.position.set(4, 6, -2);		light.castShadow = true;		light.target.position.set(0, 2, 0);		scene.add(light);		scene.add(light.target);}
 	{const color = 0x99a5ff;		const intensity = 3;		const light = new THREE.DirectionalLight(color, intensity);		light.position.set(-4, 6, -2);		light.castShadow = true;		light.target.position.set(0, 2, 0);		scene.add(light);		scene.add(light.target);}
-	{const pointLight = new THREE.PointLight(0x666666, 10, 100 );		pointLight.position.set( -4, 0, -33 );		pointLight.castShadow = true;		scene.add( pointLight );}
+	{const pointLight = new THREE.PointLight(0x666666, 10, 100 );		pointLight.position.set( -4, 0, -3 );		pointLight.castShadow = true;		scene.add( pointLight );}
 		
 	
 	const gltfloader = new GLTFLoader();
