@@ -23,11 +23,21 @@ function main(){
 	controls.update();
 
 	const scene = new THREE.Scene();
-	scene.background = new THREE.Color(0xa1a1a1);
+	// scene.background = new THREE.Color(0xa1a1a1);
+	scene.background = new THREE.Color(0x818181);
 	
 
+	// {
+		// const skyColor = 0xB1E1FF;  // light blue
+		// const groundColor = 0xB97A20;  // brownish orange
+		// const intensity = 100;
+		// const light = new THREE.HemisphereLight(skyColor, groundColor, intensity);
+		// scene.add(light);
+	// }
+
+
 	// Luzes da frente
-	{const color = 0xffffff;		const intensity = 10;		const light = new THREE.DirectionalLight(color, intensity);		light.position.set(0, 4, 8);		light.castShadow = true;		light.target.position.set(0, 2, 0);		scene.add(light);		scene.add(light.target);}
+	{const color = 0xffffff;		const intensity = 15;		const light = new THREE.DirectionalLight(color, intensity);		light.position.set(0, 4, 8);		light.castShadow = true;		light.target.position.set(0, 2, 0);		scene.add(light);		scene.add(light.target);}
 	{const color = 0xffe6a6;		const intensity = 3;		const light = new THREE.DirectionalLight(color, intensity);		light.position.set(4, 6, 2);		light.castShadow = true;		light.target.position.set(0, 2, 0);		scene.add(light);		scene.add(light.target);}
 	{const color = 0x99a5ff;		const intensity = 3;		const light = new THREE.DirectionalLight(color, intensity);		light.position.set(-4, 6, 2);		light.castShadow = true;		light.target.position.set(0, 2, 0);		scene.add(light);		scene.add(light.target);}
 	{const pointLight = new THREE.PointLight(0x666666, 10, 100 );		pointLight.position.set( -4, 0, 3 );		pointLight.castShadow = true;		scene.add( pointLight );}
