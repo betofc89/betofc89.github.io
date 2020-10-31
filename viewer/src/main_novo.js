@@ -1,89 +1,119 @@
 import * as THREE from '../vendor/three/build/three.module.js';
 import {OrbitControls} from '../vendor/three/examples/jsm/controls/OrbitControls.js';
 import {GLTFLoader} from '../vendor/three/examples/jsm/loaders/GLTFLoader.js';
+import {RGBELoader} from '../vendor/three/examples/jsm/loaders/RGBELoader.js';
 
 function main(){
 	
-	// const path = './assets/models/seg_leva/e3010s/e3010s_004_019.gltf';
-	const path = document.getElementById("caminho").innerText;
-	console.log(path);
-	
-	const canvas = document.querySelector('#c');
-	const renderer = new THREE.WebGLRenderer({antialias:true, canvas});
+	const scene = new THREE.Scene();
+	scene.background = new THREE.Color(0x707070);
+	scene.fog = new THREE.Fog( 0x707070, 5, 30);
 	
 	const fov = 45;
 	const aspect = 1;  // the canvas default
 	const near = 0.1;
 	const far = 100;
 	const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-	camera.position.set(-3, 1, 3);
-	  
+	camera.position.set(-3, 1.5, 3);
+	// camera.position.set(3, 2, 3);
+	
+	const canvas = document.querySelector('#c');
+	
+	const renderer = new THREE.WebGLRenderer({antialias:true, canvas});
+	// renderer.toneMapping = THREE.ReinhardToneMapping;
+	
+	// const renderer = new THREE.WebGLRenderer( { antialias: true } );
+	renderer.setPixelRatio( window.devicePixelRatio );
+	// renderer.setSize(window.innerWidth, window.innerHeight);
+	renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+	renderer.toneMapping = THREE.ACESFilmicToneMapping;
+	renderer.outputEncoding = THREE.sRGBEncoding;
+	renderer.shadowMap.enabled = true;
+	renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+	const pmremGenerator = new THREE.PMREMGenerator( renderer );
+	pmremGenerator.compileEquirectangularShader();
+
+	// window.addEventListener( 'resize', function () {
+
+	// const width = window.innerWidth;
+	// const height = window.innerHeight;
+	// renderer.setSize( width, height );
+	// camera.aspect = width / height;
+	// camera.updateProjectionMatrix();
+
+	// } );
+
 	const controls = new OrbitControls(camera, canvas);
 	controls.target.set(0, 0, 0);
 	controls.update();
-
-	const scene = new THREE.Scene();
-	// scene.background = new THREE.Color(0xa1a1a1);
-	scene.background = new THREE.Color(0x818181);
 	
+	const hlight = new THREE.AmbientLight( 0x404040, 1 );
+	scene.add( hlight );
 
-	// {
-		// const skyColor = 0xB1E1FF;  // light blue
-		// const groundColor = 0xB97A20;  // brownish orange
-		// const intensity = 100;
-		// const light = new THREE.HemisphereLight(skyColor, groundColor, intensity);
-		// scene.add(light);
-	// }
-
-
-	// Luzes da frente
-	{const color = 0xffffff;		const intensity = 15;		const light = new THREE.DirectionalLight(color, intensity);		light.position.set(0, 4, 8);		light.castShadow = true;		light.target.position.set(0, 2, 0);		scene.add(light);		scene.add(light.target);}
-	{const color = 0xffe6a6;		const intensity = 3;		const light = new THREE.DirectionalLight(color, intensity);		light.position.set(4, 6, 2);		light.castShadow = true;		light.target.position.set(0, 2, 0);		scene.add(light);		scene.add(light.target);}
-	{const color = 0x99a5ff;		const intensity = 3;		const light = new THREE.DirectionalLight(color, intensity);		light.position.set(-4, 6, 2);		light.castShadow = true;		light.target.position.set(0, 2, 0);		scene.add(light);		scene.add(light.target);}
-	{const pointLight = new THREE.PointLight(0x666666, 10, 100 );		pointLight.position.set( -4, 0, 3 );		pointLight.castShadow = true;		scene.add( pointLight );}
+	const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.55 );
+	directionalLight.castShadow = false;
+	// directionalLight.shadow.radius = 100;
+	directionalLight.shadow.camera.top = 4;
+	directionalLight.shadow.camera.bottom = - 4;
+	directionalLight.shadow.camera.left = - 4;
+	directionalLight.shadow.camera.right = 4;
+	directionalLight.shadow.camera.near = 0.1;
+	directionalLight.shadow.camera.far = 40;
+	// directionalLight.shadow.camera.far = 40;
+	directionalLight.shadow.bias = - 0.002;
+	directionalLight.position.set( 10, 20, -20 );
+	scene.add( directionalLight );
 	
-	// Luz de baixo
-	{const pointLight = new THREE.PointLight(0x666666, 10, 100 );		pointLight.position.set( 0, -3, 0 ); pointLight.intensity = 7.5;		pointLight.castShadow = true;		scene.add( pointLight );}
+	// ground
+	const mesh = new THREE.Mesh( new THREE.PlaneBufferGeometry( 100, 100 ), new THREE.MeshPhongMaterial( { color: 0x525252, depthWrite: false } ) );
+	mesh.rotation.x = - Math.PI / 2;
+	mesh.position.y = -1.7;
+	mesh.receiveShadow = true;
+	scene.add( mesh );
 	
-	// Luzes de trás
-	{const color = 0xffffff;		const intensity = 5;		const light = new THREE.DirectionalLight(color, intensity);		light.position.set(0, 4, -8);		light.castShadow = true;		light.target.position.set(0, 2, 0);		scene.add(light);		scene.add(light.target);}
-	{const color = 0xffe6a6;		const intensity = 3;		const light = new THREE.DirectionalLight(color, intensity);		light.position.set(4, 6, -2);		light.castShadow = true;		light.target.position.set(0, 2, 0);		scene.add(light);		scene.add(light.target);}
-	{const color = 0x99a5ff;		const intensity = 3;		const light = new THREE.DirectionalLight(color, intensity);		light.position.set(-4, 6, -2);		light.castShadow = true;		light.target.position.set(0, 2, 0);		scene.add(light);		scene.add(light.target);}
-	{const pointLight = new THREE.PointLight(0x666666, 10, 100 );		pointLight.position.set( -4, 0, -3 );		pointLight.castShadow = true;		scene.add( pointLight );}
-		
+	const path = document.getElementById("caminho").innerText;
+	console.log(path);
 	
-	const gltfloader = new GLTFLoader();
+	// const nomeHDR = '../pedestrian_overpass_1k.hdr';
+	const nomeHDR = '../hdr/quarry_01_1k.hdr';
+	// const nomeHDR = '../royal_esplanade_1k.hdr';
+	// const nomeHDR = '../spot1Lux.hdr';
+	// const nomeHDR = '../venice_sunset_1k.hdr';
 
-	gltfloader.load(path, (gltf) => {
-		const root = gltf.scene;
-		scene.add(root);
-	});
-		
+	new RGBELoader()
+		.setDataType( THREE.UnsignedByteType )
+		.setPath( 'img/' )
 
-	function resizeRendererToDisplaySize(renderer) {
-		const canvas = renderer.domElement;
-		const width = canvas.clientWidth;
-		const height = canvas.clientHeight;
-		const needResize = canvas.width !== width || canvas.height !== height;
-		if (needResize) {
-		  renderer.setSize(width, height, false);
-		}
-		return needResize;
+		.load( nomeHDR, function ( texture ) {
+			const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
+			scene.environment = envMap;
+			texture.dispose();
+			pmremGenerator.dispose();
+			var loader = new GLTFLoader();
+			loader.load( path, handle_load );
+		} );
+	
+	let model;
+	
+	function handle_load( gltf ) {
+		model = gltf.scene;
+		// model.position.y = 1.1;
+		model.traverse( function ( child ) {
+			if ( child.isMesh ) {
+				child.castShadow = true;
+				child.receiveShadow = true;
+			}
+		} );
+		scene.add( model );
+		animate();
 	}
-
-	function render() {
-		if (resizeRendererToDisplaySize(renderer)) {
-		  const canvas = renderer.domElement;
-		  camera.aspect = canvas.clientWidth / canvas.clientHeight;
-		  camera.updateProjectionMatrix();
-		}
-
-		renderer.render(scene, camera);
-		renderer.toneMapping = THREE.ReinhardToneMapping;
-
-		requestAnimationFrame(render);
-	}
-	requestAnimationFrame(render);
+	
+	
+	const animate = function () {
+		requestAnimationFrame( animate );
+		renderer.render( scene, camera );
+	};
 	
 } // Fim da function main()
 
