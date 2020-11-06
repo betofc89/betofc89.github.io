@@ -14,7 +14,9 @@ function main(){
 	const near = 0.1;
 	const far = 100;
 	const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-	camera.position.set(-3, 1.5, 3);
+	//camera.position.set(-3, 1.5, 3);
+	camera.position.set(-1.763529205990095,-0.729447718847349,4.075275544682625);
+	
 	// camera.position.set(3, 2, 3);
 	
 	const canvas = document.querySelector('#c');
@@ -48,8 +50,21 @@ function main(){
 	controls.target.set(0, 0, 0);
 	controls.update();
 	
-	const hlight = new THREE.AmbientLight( 0x404040, 1 );
+	
+	const hlight_intens = parseInt(document.getElementById("hlight_intensity").innerHTML);
+	const hlight = new THREE.AmbientLight( 0x404040, hlight_intens );
 	scene.add( hlight );
+	
+	document.getElementById("botaoMaisLight").addEventListener("click", function() {
+		hlight.intensity += 1;
+		console.log("hlight.intensity: " + hlight.intensity);
+		document.getElementById("hlight_intensity").innerHTML = hlight.intensity;
+	});
+	document.getElementById("botaoMenosLight").addEventListener("click", function() {
+		hlight.intensity -= 1;
+		console.log("hlight.intensity: " + hlight.intensity);
+		document.getElementById("hlight_intensity").innerHTML = hlight.intensity;
+	});
 
 	const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.55 );
 	directionalLight.castShadow = false;
@@ -72,14 +87,14 @@ function main(){
 	mesh.receiveShadow = true;
 	scene.add( mesh );
 	
-	const path = document.getElementById("caminho").innerText;
-	console.log(path);
-	
 	// const nomeHDR = '../pedestrian_overpass_1k.hdr';
 	const nomeHDR = '../hdr/quarry_01_1k.hdr';
 	// const nomeHDR = '../royal_esplanade_1k.hdr';
 	// const nomeHDR = '../spot1Lux.hdr';
 	// const nomeHDR = '../venice_sunset_1k.hdr';
+
+	const path = document.getElementById("caminho").innerText;
+	console.log(path);
 
 	new RGBELoader()
 		.setDataType( THREE.UnsignedByteType )
@@ -113,6 +128,7 @@ function main(){
 	const animate = function () {
 		requestAnimationFrame( animate );
 		renderer.render( scene, camera );
+		//console.log("x: " + camera.position.x + ", y: " + camera.position.y + ", z: " + camera.position.z);
 	};
 	
 } // Fim da function main()
