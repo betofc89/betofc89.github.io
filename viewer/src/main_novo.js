@@ -61,7 +61,10 @@ function main(){
 		document.getElementById("hlight_intensity").innerHTML = hlight.intensity;
 	});
 	document.getElementById("botaoMenosLight").addEventListener("click", function() {
-		hlight.intensity -= 1;
+		if (hlight.intensity > 0) {
+			hlight.intensity -= 1;
+		}
+			
 		console.log("hlight.intensity: " + hlight.intensity);
 		document.getElementById("hlight_intensity").innerHTML = hlight.intensity;
 	});
