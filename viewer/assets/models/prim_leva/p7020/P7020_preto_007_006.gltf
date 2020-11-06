@@ -48,7 +48,7 @@
             ],
             "translation" : [
                 0.10652178525924683,
-                -1.5438954830169678,
+                -1.5468955039978027,
                 0.008089810609817505
             ]
         },
@@ -142,7 +142,7 @@
             "name" : "slot_usb",
             "translation" : [
                 -0.08068207651376724,
-                -1.563193440437317,
+                -1.5706599950790405,
                 0.003825962543487549
             ]
         },
@@ -436,25 +436,6 @@
             }
         },
         {
-            "doubleSided" : true,
-            "emissiveFactor" : [
-                0,
-                0,
-                0
-            ],
-            "name" : "metal_usb",
-            "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0.4575316309928894,
-                    0.4575316309928894,
-                    0.4575316309928894,
-                    1
-                ],
-                "metallicFactor" : 0.6170212626457214,
-                "roughnessFactor" : 0.10283687710762024
-            }
-        },
-        {
             "alphaMode" : "BLEND",
             "doubleSided" : true,
             "emissiveFactor" : [
@@ -627,7 +608,7 @@
                         "TEXCOORD_0" : 38
                     },
                     "indices" : 39,
-                    "material" : 0
+                    "material" : 1
                 }
             ]
         },
@@ -655,7 +636,7 @@
                         "TEXCOORD_0" : 46
                     },
                     "indices" : 47,
-                    "material" : 0
+                    "material" : 1
                 }
             ]
         },
@@ -669,7 +650,7 @@
                         "TEXCOORD_0" : 50
                     },
                     "indices" : 51,
-                    "material" : 8
+                    "material" : 1
                 }
             ]
         },
@@ -683,7 +664,7 @@
                         "TEXCOORD_0" : 54
                     },
                     "indices" : 55,
-                    "material" : 9
+                    "material" : 8
                 }
             ]
         },
@@ -720,7 +701,7 @@
                         "TEXCOORD_0" : 66
                     },
                     "indices" : 3,
-                    "material" : 10
+                    "material" : 9
                 }
             ]
         },
@@ -799,7 +780,7 @@
                         "TEXCOORD_0" : 87
                     },
                     "indices" : 88,
-                    "material" : 11
+                    "material" : 10
                 }
             ]
         },

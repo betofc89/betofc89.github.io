@@ -96,6 +96,8 @@ function main(){
 	const path = document.getElementById("caminho").innerText;
 	console.log(path);
 
+	document.getElementById("linkDownload").href = path;
+
 	new RGBELoader()
 		.setDataType( THREE.UnsignedByteType )
 		.setPath( 'img/' )
