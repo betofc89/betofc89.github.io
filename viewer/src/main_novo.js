@@ -86,7 +86,7 @@ function main(){
 	// ground
 	const mesh = new THREE.Mesh( new THREE.PlaneBufferGeometry( 100, 100 ), new THREE.MeshPhongMaterial( { color: 0x525252, depthWrite: false } ) );
 	mesh.rotation.x = - Math.PI / 2;
-	mesh.position.y = -1.7;
+	mesh.position.y = -1.9;
 	mesh.receiveShadow = true;
 	scene.add( mesh );
 	
