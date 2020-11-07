@@ -90,11 +90,11 @@ function main(){
 	mesh.receiveShadow = true;
 	scene.add( mesh );
 	
-	// const nomeHDR = '../pedestrian_overpass_1k.hdr';
+	// const nomeHDR = '../hdr/pedestrian_overpass_1k.hdr';
 	const nomeHDR = '../hdr/quarry_01_1k.hdr';
-	// const nomeHDR = '../royal_esplanade_1k.hdr';
-	// const nomeHDR = '../spot1Lux.hdr';
-	// const nomeHDR = '../venice_sunset_1k.hdr';
+	// const nomeHDR = '../hdr/royal_esplanade_1k.hdr';
+	// const nomeHDR = '../hdr/spot1Lux.hdr';
+	// const nomeHDR = '../hdr/venice_sunset_1k.hdr';
 
 	const path = document.getElementById("caminho").innerText;
 	console.log(path);
