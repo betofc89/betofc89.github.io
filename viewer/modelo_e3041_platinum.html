@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8" />
 
-  <link href="./styles/main.css" rel="stylesheet" type="text/css">
+  <link href="./styles/main_2.css" rel="stylesheet" type="text/css">
   
   <script type="module" src="./src/main_novo.js"></script>
   
@@ -19,22 +19,39 @@
 
 <body>
 	
+	<h1>E3041 Platinum</h1>
+	
+	<div id="galeria" style="background-color: black;">
+
+		<img src="img/e3041_platinum/composicao_001.png">
+
+	</div>
+	
+	<br/>
+	
+	<hr style="color: gray; background-color: white; height: 1px; width: 33%;">
+	
+	<h1>Modelo Interativo em 3D</h1>
+	
 	
 	<div id="divCanvas">
 		<canvas id="c"></canvas>
 	</div>
 	
-	<div id="controlBar">
+	<div style="color: white; font-size: 12pt;">Clique e arraste para girar; Role o mouse para zoom</div>
+	
+	<div id="controlBar" style="display: none;">
 		<b style="color: white;">Luminosidade:</b>
 		<button id="botaoMenosLight" style="width: 50px; height: 50px; font-size: 30px;"> - </button>
 		<button id="botaoMaisLight" style="width: 50px; height: 50px; font-size: 30px;"> + </button>
 	</div>
 	
-	<div id="downloadBar" style="background-color: ; margin: 30px 0px 30px 0px;">
+	
+	<div id="downloadBar" style="background-color: ; margin: 30px 0px 30px 0px; display: none;">
 		<a id="linkDownload" href="path_to_file" download="e3041_platinum.gltf">Baixar Arquivo GLTF</a>
 	</div>
 	
-	<div id="divInfo">
+	<div id="divInfo" style="display: none;">
 		<a href="index.html">Voltar</a>
 	</div>
 	
@@ -44,11 +61,11 @@
 		<tr style="display: none;"><td>nomeHDR</td><td><div id="nomeHDR">../hdr/quarry_01_1k.hdr</div></td></tr>
 	</table>
 	
-	<div id="galeria">
+	<br/><br/>
+	
+	
 
-		<img src="img/e3041_platinum_img_001.png">
-
-	</div>
+	<br/><br/>
 
 </body>
 
