@@ -21,7 +21,7 @@ header {
 header > p {
     /* text-align: right; */
     /* width: 50%; */
-    margin-left: 35%;
+    /* margin-left: 35%; */
     /* text-align: justify; */
     /* border: 3px dashed rgba(50, 50, 50, 0.15); */
     /* border-radius: 1rem; */
@@ -34,8 +34,33 @@ h1 {
     text-shadow: 5px 5px rgba(128, 128, 128, 0.25);
 }
 
+#summary {
+    display: block;
+    width: 100%;
+    height: 300px;
+    background-color: rgb(255, 255, 240);
+    padding: 0;
+    border: 1px dashed grey;
+    /* border-radius: 1rem; */
+}
+
+#summary li {
+    margin-bottom: 0.15rem;
+    list-style: none;
+}
+
+#summary a {
+    color: unset;
+}
+
 h2 {
     text-shadow: 5px 5px rgba(128, 128, 128, 0.25);
+    display: inline-block;
+}
+
+h2:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 /* ----------------------------------- */
@@ -164,6 +189,34 @@ p {
     cursor: pointer;
     /* transform: scale(1.025); */
     /* transform: translate(-5px,-5px); */
+    transform: scale(98%);
+    filter: brightness(1.35);
+}
+
+.svg-code {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgb(221, 221, 221);
+    padding: 1rem;
+    border-left: 7px solid rgb(201, 130, 0);
+    border-radius: 0.25rem;
+}
+
+.svg-code:hover {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 0px 0px 10px 5px grey;
+    border-left: 7px solid rgb(201, 130, 0);
+    cursor: pointer;
+}
+
+.svg-code:active {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 0px 0px 10px 5px rgb(80, 80, 80);
+    border-left: 7px solid rgb(201, 130, 0);
+    cursor: pointer;
     transform: scale(98%);
     filter: brightness(1.35);
 }
@@ -579,3 +632,31 @@ table tr:hover {
     /* background-color: rgb(50, 50, 50); */
     
 /* } */
+
+.square-to-clip {
+    display: block;
+    margin: 0 auto;
+    background-color: red;
+    width: 300px;
+    height: 300px;
+    /* clip-path: circle(40%); */
+}
+
+.circle-clipped:active {
+    clip-path: circle(40%);
+    /* background: radial-gradient(red 15%,white); */
+}
+
+/* .linkedin-clipped {
+    clip-path: path('M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z');
+} */
+
+#linkedin-logo-svg {
+    /* fill: blue; */
+    border: 1px solid black;
+}
+
+#linkedin-logo-svg:hover {
+    fill: #2365BE;
+    border: 1px solid black;
+}

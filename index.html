@@ -10,18 +10,34 @@
     <header>
         <h1>Testing HTML/CSS</h1>
         <p>This is a simple web-page designed by Roberto Cabral to test some of his current knowledge on HTML and CSS.</p>
+        <p>Click on any of the links below to go straight to the respective section.</p>
+
+        <div id="summary">
+            <ul>
+                <li><a href="#keyboard_keys">Keyboard Keys</a></li>
+                <li><a href="#formatted_css_code">Formatted CSS Code</a></li>
+                <li><a href="#simple_form">A Simple Form</a></li>
+                <li><a href="#simple_table">A Simple Table</a></li>
+                <li><a href="#rgb_gradient_effect">RGB Gradient Effect</a></li>
+                <li><a href="#push_section">Push</a></li>
+                <li><a href="#jump_section">Jump</a></li>
+                <li><a href="#another_grid">Another Grid</a></li>
+                <li><a href="#clip_section">Clip</a></li>
+                <li><a href="#an_example_of_svg">An example of SVG</a></li>
+            </ul>
+        </div>
+
     </header>
     <div class="divider"></div>
     <main>
         <section>
-            <h2>Keyboard keys</h2>
+            <h2 id="keyboard_keys">Keyboard keys</h2>
             <p>I created a CSS class to style some letters as if they were keyboard keys. Press the keys to see the pressing effect.</p>
             <p>The combination <span class="tecla"><span class="tecla-texto">Ctrl</span></span> + <span class="tecla"><span class="tecla-texto">Alt</span></span> + <span class="tecla"><span class="tecla-texto">Del</span></span> is one of the most common key combinations for intermediate and advanced Windows users.</p>
-            <p>To achieve the pressing effect was especially trick.</p>
         </section>
         <div class="divider"></div>
         <section>
-            <h2>Code snippet</h2>
+            <h2 id="formatted_css_code">Formatted CSS Code</h2>
             <p>Below I replicate the color scheme of <span class="vscode">Visual Studio Code</span> IDE:</p>
             <div class="code">
                 <code>
@@ -35,7 +51,7 @@
         </section>
         <div class="divider"></div>
         <section>
-            <h2>A Simple Form</h2>
+            <h2 id="simple_form">A Simple Form</h2>
             <form autocomplete="off">
                 <input autocomplete="false" name="hidden" type="text" style="display: none;">
 
@@ -55,7 +71,7 @@
 
         <div class="divider"></div>
         <section>
-            <h2>A Simple Table</h2>
+            <h2 id="simple_table">A Simple Table</h2>
             <table id="tbl-1">
                 <thead>
                     <tr>
@@ -163,7 +179,7 @@
 
         <div class="divider"></div>
         <section>
-            <h2>RGB Gradient Effect</h2>
+            <h2 id="rgb_gradient_effect">RGB Gradient Effect</h2>
             <p>The gradient effect below is made by using pure CSS.</p>
             <div id="rgb-gradient"></div>
             <p></p>The CSS code is shown below:</p>
@@ -178,12 +194,11 @@
                     <span class="brkts">}</span>
                 </code>
             </div>
-
         </section>
 
         <div class="divider"></div>
         <section>
-            <h2>Push</h2>
+            <h2 id="push_section">Push</h2>
             <p>Click on any of the squares below to push the neighboring square to the right.</p>
             <div class="cubes-div">
                 <div class="cube"></div>
@@ -194,7 +209,7 @@
 
         <div class="divider"></div>
         <section>
-            <h2>Jump</h2>
+            <h2 id="jump_section">Jump</h2>
             <p>Hover over the square below to see its shadow distancing from it.</p>
             <div class="cubes-div">
                 <div class="cube-pular"></div>
@@ -203,7 +218,7 @@
 
         <div class="divider"></div>
         <section>
-            <h2>Another Grid</h2>
+            <h2 id="another_grid">Another Grid</h2>
             <p>Hover over the squares below (and click on them).</p>
             <div class="push-grid">
                 <div></div>
@@ -230,6 +245,37 @@
                 <div></div>
                 <div></div>
                 <div></div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+        <section>
+            <h2 id="clip_section">Clip</h2>
+            
+            <p>Below there is the original square:</p>
+            <div class="square-to-clip"></div>
+            
+            <p>Click and hold the square below to clip the square with a circle:</p>
+            <div class="square-to-clip circle-clipped"></div>
+
+            <!-- <svg>M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z</svg> -->
+            
+            <!-- <svg>
+                <polygon points="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" />
+            </svg> -->
+            
+        </section>
+
+        <div class="divider"></div>
+        <section>
+            <h2 id="an_example_of_svg">An example of SVG</h2> <br>
+            <!-- <svg viewBox="0 0 25 25" width="300px" height="300px" id="linkedin-logo-svg"> -->
+            <svg viewBox="0 0 25 25" width="300px" height="300px" id="linkedin-logo-svg">
+                <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+            </svg>
+            <p>The SVG above was generated by the following code:</p>
+            <div class="svg-code">
+                M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z
             </div>
         </section>
 
