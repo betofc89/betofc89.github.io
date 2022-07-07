@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -36,7 +37,7 @@ h1 {
 
 #summary {
     display: block;
-    width: 100%;
+    width: 70%;
     height: 300px;
     background-color: rgb(255, 255, 240);
     padding: 0;
@@ -203,10 +204,21 @@ p {
     border-radius: 0.25rem;
 }
 
+.alert-a1 {
+    z-index: 10;
+    display: block;
+    background-color: blue;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    color: white;
+}
+
 .svg-code:hover {
     padding: 1rem;
     border-radius: 0.25rem;
-    box-shadow: 0px 0px 10px 5px grey;
+    box-shadow: 0px 0px 15px 5px grey;
     border-left: 7px solid rgb(201, 130, 0);
     cursor: pointer;
 }
@@ -516,6 +528,10 @@ table tr:hover {
     /* margin-top: 50px; */
 }
 
+#rgb-gradient:hover {
+    filter:blur(5px);
+}
+
 /* --------------------------------------- */
 
 .cubes-div {
@@ -546,16 +562,22 @@ table tr:hover {
     /* margin-right: 30px; */
     animation-name: empurrar;
     animation-duration: 0.3s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes empurrar {
-    from {margin-right: 1rem;}
-    to {margin-right: 3rem;}
+    from {
+        margin-right: 1rem;
+    }
+    to {
+        margin-right: 3rem;
+    }
 }
 
 .cube-pular:hover {
     animation-name: pular;
     animation-duration: 0.5s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes pular {
@@ -603,25 +625,29 @@ table tr:hover {
 }
 
 .push-grid > div {
-    background-color: rgb(50, 50, 50);
+    background-color: rgb(75, 24, 0);
     cursor: pointer;
+    border-style:ridge;
+    border-color: rgb(179, 54, 4);
+    border-width: 10px;
+    
 }
 
-.push-grid > div:hover {
-    /* margin: 15px; */
-    /* border: 5px solid white; */
-    /* background-color: red; */
-    /* background: radial-gradient(red, rgba(50,50,50,1)); */
-    background-color: rgb(70, 70, 70);
+.push-grid > div:hover {   
+    animation-name: descer;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
 }
 
-.push-grid > div:active {
-    /* margin: 15px; */
-    /* border: 5px solid white; */
-    /* background-color: red; */
-    /* background: radial-gradient(red, rgba(70,70,70,1)); */
-    box-shadow: inset 5px 5px 5px 0px black;
-    background-color: rgb(40, 40, 40);
+@keyframes descer {
+    from {
+        box-shadow: none;
+        background-color: rgb(75, 24, 0);
+    }
+    to {
+        box-shadow: inset 20px 20px 3px 0px black;
+        background-color: rgb(56, 18, 0);
+    }
 }
 
 /* .sm-cube {
@@ -642,6 +668,24 @@ table tr:hover {
     /* clip-path: circle(40%); */
 }
 
+.circle-clipped {
+    animation-name: circle-cycle;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes circle-cycle {
+    from {
+        clip-path: circle(100%);
+        background-color: red;
+    }
+    to {
+        clip-path: circle(20%);
+        background-color: rgb(100, 0, 0);
+    }
+}
+
 .circle-clipped:active {
     clip-path: circle(40%);
     /* background: radial-gradient(red 15%,white); */
@@ -660,3 +704,51 @@ table tr:hover {
     fill: #2365BE;
     border: 1px solid black;
 }
+
+.unformatted-link {
+    text-decoration: none;
+    color: unset;
+}
+
+.tip {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 1rem auto 0 auto;
+    background-color: rgb(252, 243, 204);
+    padding: 1rem;
+
+    /* border: 2px dashed orange; */
+    /* border-radius: 0.5rem; */
+    /* border-left: 5px solid rgb(72, 72, 255); */
+    line-height: 1.55rem;
+
+    box-shadow: 2px 2px 5px rgb(70, 70, 70);
+}
+
+.tip:hover {
+    animation: levantar 0.25s forwards;
+}
+
+@keyframes levantar {
+    from {
+        box-shadow: 2px 2px 2px rgb(70, 70, 70);
+    }
+    to {
+        box-shadow: 12px 12px 5px rgb(129, 129, 129);
+        transform: translate(-3px, -3px);
+    }
+}
+
+.tip > a {
+    color: unset;
+}
+
+.tip-title {
+    display: block;
+    font-weight: bold;
+    /* color: red; */
+    margin-bottom: 1rem;
+    font-size: 1.30rem;
+}
+
