@@ -38,26 +38,29 @@ h2 {
     text-shadow: 5px 5px rgba(128, 128, 128, 0.25);
 }
 
-.tecla {
-    background: linear-gradient(rgb(195, 195, 195), rgb(225,225,225));
+.tecla, .tecla:hover {
     padding: 0.20rem;
     border: 1px solid rgb(180, 180, 180);
     border-radius: 0.2rem;
-    /* offset-x | offset-y | blur-radius | spread-radius | color */
-    box-shadow: 2px 2px 0px 0px grey;
     font-family: 'Courier New', Courier, monospace;
+}
+
+.tecla {
+    background: linear-gradient(rgb(225,225,225), rgb(180, 180, 180));
+    box-shadow: 2px 2px 0px 0px grey;
     color: rgb(94, 94, 94);
 }
 
-.tecla:hover {
-    background: linear-gradient(rgb(225,225,225), rgb(209, 209, 209));
-    padding: 0.20rem;
-    border: 1px solid rgb(180, 180, 180);
-    border-radius: 0.2rem;
+.tecla:active {
+    
+    background: linear-gradient(rgb(195, 195, 195), rgb(225,225,225));
     box-shadow: inset 2px 2px 0px 0px grey;
-    font-family: 'Courier New', Courier, monospace;
     color: rgba(0, 0, 0, 0);
     text-shadow: 2px 2px rgb(65, 65, 65);
+    cursor: pointer;
+}
+
+.tecla:hover{
     cursor: pointer;
 }
 
@@ -120,6 +123,7 @@ p {
     border-left: 7px solid grey;
     /* filter: grayscale(70%); */
     /* filter: blur(5px); */
+    line-height: 1.4rem;
 }
 
 .code:hover {
@@ -369,11 +373,6 @@ table tr:hover {
     background-color: rgb(255, 192, 92);
 }
 
-table td {
-    /* border: 1px solid rgb(50, 50, 50); */
-    /* padding: 0.5rem; */
-}
-
 /* -------------------------- */
 
 .n1 {
@@ -396,6 +395,14 @@ table td {
     color: rgb(203, 145, 121);
 }
 
+.n5 {
+    color: #DBDCAC;
+}
+
+.n6 {
+    color: #B46FD4;
+}
+
 /* -------------------------- */
 
 #nef-main {
@@ -407,10 +414,18 @@ table td {
     height: 300px;
     /* background: linear-gradient(rgb(40,40,40) 33%, rgba(0,0,0,0)); */
     /* background: linear-gradient(rgb(205, 152, 64) 33%, rgba(26, 218, 67, 0)); */
-    background: linear-gradient(rgb(24, 99, 117) 33%, rgba(26, 218, 67, 0));
+    background: linear-gradient(rgb(91, 160, 177) 33%, rgba(26, 218, 67, 0));
     padding: 0.1rem 1rem;
     /* color: gray; */
-    
+}
+
+#rgb-gradient {
+    display: block;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(90deg, red,green,blue);
+
+    /* margin-top: 50px; */
 }
 
 .cubes-div {

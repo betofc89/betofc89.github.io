@@ -8,14 +8,17 @@
 </head>
 <body>
     <header>
-        <h1>Testing HTML/CSS (MUDANÇA)</h1>
-        <p>This is a simple web-page designed by Roberto Cabral to test some of my current knowledge on HTML/CSS.</p>
+        <h1>Testing HTML/CSS</h1>
+        <p>This is a simple web-page designed by Roberto Cabral to test some of his current knowledge on HTML and CSS.</p>
     </header>
     <div class="divider"></div>
     <main>
         <section>
             <h2>Keyboard keys</h2>
-            <p>You can access the <span class="vscode">Visual Studio Code</span> command palette by pressing <span class="tecla">Ctrl</span> + <span class="tecla">Shift</span> + <span class="tecla">P</span>.</p>
+            <p>I created a CSS class to style some letters as if they were keyboard keys. Press the keys to see the pressing effect.</p>
+            <p><span class="tecla">Ctrl</span> + <span class="tecla">Alt</span> + <span class="tecla">Del</span></p>
+            <!-- <p>E. g.: You can access the <span class="vscode">Visual Studio Code</span> command palette by pressing <span class="tecla">Ctrl</span> + <span class="tecla">Shift</span> + <span class="tecla">P</span>.</p> -->
+            <p>To achieve the pressing effect was especially trick, because the text inside the key has to follow the key when it is being pressed.</p>
         </section>
         <div class="divider"></div>
         <section>
@@ -161,11 +164,31 @@
 
         <div class="divider"></div>
         <section>
-            <h2>A Nice Efect</h2>
+            <h2>Gradient Efect</h2>
             <div id="nef-main">
                 <h3>LOREM IPSUM</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod repellat ut quas repellendus necessitatibus, rerum labore mollitia aut iste voluptatum voluptate maxime nemo ad, id sapiente?</p>
             </div>
+        </section>
+
+        <div class="divider"></div>
+        <section>
+            <h2>RGB Gradient Effect</h2>
+            <p>The gradient effect below is made by using pure CSS.</p>
+            <div id="rgb-gradient"></div>
+            <p></p>The CSS code is shown below:</p>
+            <div class="code">
+                <code>
+                    <span class="n1">#rgb-gradient</span> <span class="brkts">{</span> <br>
+                    <span class="tab1"></span><span class="n2">background</span>: <span class="n3"><br/>
+                        <span class="tab1"></span><span class="tab1"></span><span class="n5">linear-gradient</span><span class="n6">(</span>90deg, red, green, blue<span class="n6">)</span></span>; <br>
+                    <span class="tab1"></span><span class="n2">display</span>: <span class="n4">block</span>; <br>
+                    <span class="tab1"></span><span class="n2">width</span>: <span class="n3">100%</span>; <br>
+                    <span class="tab1"></span><span class="n2">height</span>: <span class="n3">50px;</span> <br>
+                    <span class="brkts">}</span>
+                </code>
+            </div>
+
         </section>
 
         <div class="divider"></div>
