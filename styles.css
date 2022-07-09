@@ -38,16 +38,22 @@ h1 {
 #summary {
     display: block;
     width: 70%;
-    height: 300px;
+    /* height: 300px; */
     background-color: rgb(255, 255, 240);
     padding: 0;
     border: 1px dashed grey;
     /* border-radius: 1rem; */
+    line-height: 1.75rem;
+    /* overflow: hidden; */
 }
 
 #summary li {
     margin-bottom: 0.15rem;
-    list-style: none;
+    list-style:none;
+}
+
+#summary li::before {
+    content: "> ";
 }
 
 #summary a {
@@ -287,16 +293,15 @@ form > input.input-entries:focus {
  /* ------------------- */
 
 form > input[type=submit], input[type=reset] {
-    background: linear-gradient(rgb(195, 195, 195), rgb(225,225,225));
+    background: linear-gradient(rgb(240,240,240), rgb(180, 180, 180));
     padding: 0.50rem;
     border: 1px solid rgb(180, 180, 180);
     border-radius: 0.2rem;
     font-size: 1rem;
-    font-weight: bold;
     cursor: pointer;
     box-shadow: 2px 2px 0px 0px grey;
     font-family: 'Courier New', Courier, monospace;
-    color: rgb(94, 94, 94);
+    color: rgb(90, 90, 90);
     display: inline-block;
     min-width: 100px;
     margin-top: 1rem;
@@ -308,7 +313,7 @@ form > input[type=submit]:hover, input[type=reset]:hover {
     border: 1px solid rgb(180, 180, 180);
     border-radius: 0.2rem;
     font-size: 1rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     cursor: pointer;
     box-shadow: 2px 2px 0px 0px grey;
     font-family: 'Courier New', Courier, monospace;
@@ -316,17 +321,17 @@ form > input[type=submit]:hover, input[type=reset]:hover {
 }
 
 form > input[type=submit]:active, input[type=reset]:active {
-    background: linear-gradient(rgb(225,225,225), rgb(209, 209, 209));
+    background: linear-gradient(rgb(165, 165, 165), rgb(240,240,240));
     padding: 0.50rem;
     border: 1px solid rgb(180, 180, 180);
     border-radius: 0.2rem;
     font-size: 1rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     cursor: pointer;
-    box-shadow: inset 2px 2px 0px 0px grey;
+    box-shadow: inset 2px 2px 0px 0px rgb(100, 100, 100);
     font-family: 'Courier New', Courier, monospace;
     color: rgba(0, 0, 0, 0);
-    text-shadow: 2px 2px rgb(65, 65, 65);
+    text-shadow: 2px 2px rgb(90, 90, 90);
 }
 
 /* ------------------- */
@@ -524,12 +529,6 @@ table tr:hover {
     width: 80%;
     height: 30px;
     background: linear-gradient(90deg, red,green,blue);
-
-    /* margin-top: 50px; */
-}
-
-#rgb-gradient:hover {
-    filter:blur(5px);
 }
 
 /* --------------------------------------- */
@@ -616,20 +615,20 @@ table tr:hover {
     margin: 0 auto;
     /* border: 1px solid grey; */
 
-    width: 80%;
-    height: 300px;
+    width: 20%;
+    height: 100px;
 
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: auto auto;
     gap: 3px;
 }
 
 .push-grid > div {
-    background-color: rgb(75, 24, 0);
+    background-color: rgb(120, 120, 120);
     cursor: pointer;
-    border-style:ridge;
-    border-color: rgb(179, 54, 4);
-    border-width: 10px;
+    /* border-style:ridge;
+    border-color: rgb(189, 189, 189);
+    border-width: 10px; */
     
 }
 
@@ -642,11 +641,11 @@ table tr:hover {
 @keyframes descer {
     from {
         box-shadow: none;
-        background-color: rgb(75, 24, 0);
+        background-color: rgb(120, 120, 120);
     }
     to {
-        box-shadow: inset 20px 20px 3px 0px black;
-        background-color: rgb(56, 18, 0);
+        box-shadow: inset 20px 20px 7px 0px black;
+        background-color: rgb(70, 70, 70);
     }
 }
 
@@ -697,12 +696,12 @@ table tr:hover {
 
 #linkedin-logo-svg {
     /* fill: blue; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 #linkedin-logo-svg:hover {
-    fill: #2365BE;
-    border: 1px solid black;
+    /* fill: #2365BE; */
+    /* border: 1px solid black; */
 }
 
 .unformatted-link {
@@ -713,7 +712,7 @@ table tr:hover {
 .tip {
     position: relative;
     display: block;
-    width: 100%;
+    width: 80%;
     margin: 1rem auto 0 auto;
     background-color: rgb(252, 243, 204);
     padding: 1rem;
@@ -724,6 +723,7 @@ table tr:hover {
     line-height: 1.55rem;
 
     box-shadow: 2px 2px 5px rgb(70, 70, 70);
+    color: rgb(75, 75, 75);
 }
 
 .tip:hover {
@@ -750,5 +750,68 @@ table tr:hover {
     /* color: red; */
     margin-bottom: 1rem;
     font-size: 1.30rem;
+}
+
+/* ------------------------------------------- */
+
+#kis-body {
+    padding: 1rem;
+    border: 2px solid rgb(180, 180, 180);
+    border-radius: 1rem;
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+
+#section_keep_it_simple p {
+    text-align: center;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5rem;
+}
+
+#section_keep_it_simple > h2 {
+    text-align: unset;
+}
+
+.simple-square-container {
+    width: 60%;
+    margin: 0 auto;
+    /* height: 10px; */
+    position: relative;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#simple-square {
+    animation-name: mover-simple-square;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+
+    position: absolute;
+
+    /* border: 1px solid black; */
+    border-radius: 0.05rem;
+    width: 50px;
+    height: 100%;
+
+    background-color: rgb(225, 225, 225);
+
+    box-shadow: 3px 3px rgba(128, 128, 128, 0.35);
+}
+
+@keyframes mover-simple-square {
+    from {
+        top: 0px;
+        left: 0px;
+    }
+    to {
+        top: 0px;
+        left: 100%;
+    }
 }
 
