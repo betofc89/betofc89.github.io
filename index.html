@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
     <script src="script.js"></script>
     <title>Testing HTML/CSS</title>
 </head>
 <body>
     <header>
+        <span id="top"></span>
         <h1>Testing HTML/CSS</h1>
         <p>This is a simple web-page designed by Roberto Cabral to test some of his current knowledge on HTML and CSS.</p>
         <p>Click on any of the links below to go straight to the respective section.</p>
@@ -22,10 +24,10 @@
                 <li><a href="#rgb_gradient_effect">RGB Gradient Effect</a></li>
                 <li><a href="#push_section">Push</a></li>
                 <li><a href="#jump_section">Jump</a></li>
-                <li><a href="#another_grid">Another Grid</a></li>
+                <li><a href="#another_grid">Sinking Squares</a></li>
                 <li><a href="#clip_section">Clip</a></li>
                 <li><a href="#an_example_of_svg">An example of SVG</a></li>
-                <li><a href="#keep_it_simple">Keep it Simple</a></li>
+                <li><a href="#flex-box-section">Flex box</a></li>
             </ul>
         </div>
 
@@ -33,7 +35,8 @@
     <div class="divider"></div>
     <main>
         <section>
-            <h2 id="keyboard_keys">Keyboard keys</h2>
+            <!-- <h2 class="section-title" id="keyboard_keys">Keyboard keys</h2><a href="#top">(back to top <i class="fa-solid fa-arrow-up"></i>)</a> -->
+            <h2 class="section-title" id="keyboard_keys">Keyboard keys</h2><a href="#top"><i class="fa-solid fa-arrow-up"></i></a>
             <p>I created a CSS class to style some letters as if they were keyboard keys.</p>
             <div class="tip">
                 <span class="tip-title">Tip 💡</span> Click on the keys below to see the pressing effect on them.
@@ -43,7 +46,7 @@
         </section>
         <div class="divider"></div>
         <section>
-            <h2 id="formatted_css_code">Formatted CSS Code</h2>
+            <h2 id="formatted_css_code">Formatted CSS Code</h2><a href="#top"><i class="fa-solid fa-arrow-up"></i></a>
             <p>Below I replicate the color scheme of <span class="vscode">Visual Studio Code</span> IDE:</p>
             <div class="code">
                 <code>
@@ -57,7 +60,7 @@
         </section>
         <div class="divider"></div>
         <section>
-            <h2 id="simple_form">A Simple Form</h2>
+            <h2 id="simple_form">A Simple Form</h2><a href="#top"><i class="fa-solid fa-arrow-up"></i></a>
             <form autocomplete="off">
                 <input autocomplete="false" name="hidden" type="text" style="display: none;">
 
@@ -77,7 +80,7 @@
 
         <div class="divider"></div>
         <section>
-            <h2 id="simple_table">A Simple Table</h2>
+            <h2 id="simple_table">A Simple Table</h2><a href="#top"><i class="fa-solid fa-arrow-up"></i></a>
             <table id="tbl-1">
                 <thead>
                     <tr>
@@ -185,7 +188,7 @@
 
         <div class="divider"></div>
         <section>
-            <h2 id="rgb_gradient_effect">RGB Gradient Effect</h2>
+            <h2 id="rgb_gradient_effect">RGB Gradient Effect</h2><a href="#top"><i class="fa-solid fa-arrow-up"></i></a>
             <p>The gradient effect below is made by using pure CSS.</p>
             <div id="rgb-gradient"></div>
             <p></p>The CSS code is shown below:</p>
@@ -204,7 +207,7 @@
 
         <div class="divider"></div>
         <section>
-            <h2 id="push_section">Push</h2>
+            <h2 id="push_section">Push</h2><a href="#top"><i class="fa-solid fa-arrow-up"></i></a>
             <p>Click on any of the squares below to push the neighboring square to the right.</p>
             <div class="cubes-div">
                 <div class="cube"></div>
@@ -215,7 +218,7 @@
 
         <div class="divider"></div>
         <section>
-            <h2 id="jump_section">Jump</h2>
+            <h2 id="jump_section">Jump</h2><a href="#top"><i class="fa-solid fa-arrow-up"></i></a>
             <p>Hover over the square below to see its shadow distancing from it.</p>
             <div class="cubes-div">
                 <div class="cube-pular"></div>
@@ -224,7 +227,7 @@
 
         <div class="divider"></div>
         <section>
-            <h2 id="another_grid">Sinking Squares</h2>
+            <h2 id="another_grid">Sinking Squares</h2><a href="#top"><i class="fa-solid fa-arrow-up"></i></a>
             <p>Hover over the squares below to see them go down into the page.</p>
             <div class="push-grid">
                 <div></div>
@@ -237,7 +240,7 @@
 
         <div class="divider"></div>
         <section>
-            <h2 id="clip_section">Clip</h2>
+            <h2 id="clip_section">Clip</h2><a href="#top"><i class="fa-solid fa-arrow-up"></i></a>
             
             <p>The animation below shows a square being clipped by a circle path:</p>
             <div class="square-to-clip circle-clipped"></div>
@@ -252,7 +255,7 @@
 
         <div class="divider"></div>
         <section>
-            <h2 id="an_example_of_svg">An example of SVG</h2> <br>
+            <h2 id="an_example_of_svg">An example of SVG</h2> <a href="#top"><i class="fa-solid fa-arrow-up"></i></a>
             <!-- <svg viewBox="0 0 25 25" width="300px" height="300px" id="linkedin-logo-svg"> -->
             <svg viewBox="0 0 25 25" width="300px" height="300px" id="linkedin-logo-svg">
                 <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
@@ -270,7 +273,7 @@
 
         <div class="divider"></div>
         <section>
-            <h2 id="flex-box-section">Flex box</h2>
+            <h2 id="flex-box-section">Flex box</h2><a href="#top"><i class="fa-solid fa-arrow-up"></i></a>
             <div class="flex-box">
                 <div class="box"></div>
                 <div class="box"></div>

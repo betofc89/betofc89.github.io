@@ -70,6 +70,33 @@ h2:hover {
     cursor: pointer;
 }
 
+a[href="#top"] {
+    color: rgb(175, 175, 175);
+    margin-left: 1.0rem;
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    text-decoration-line: none;
+    font-size: 0.75rem;
+    
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+    
+    /* border: 1px solid rgb(201, 201, 201); */
+    /* border-radius: 25%; */
+    /* padding: 0.5rem; */
+}
+
+a[href="#top"]:hover {
+    /* transform: translateY(-3px); */
+    color: grey;
+}
+
+a[href="#top"]:hover::after {
+    content: " (back to top)";
+    
+}
+
 /* ----------------------------------- */
 
 .tecla, .tecla:active {
@@ -199,6 +226,8 @@ p {
     /* transform: translate(-5px,-5px); */
     transform: scale(98%);
     filter: brightness(1.35);
+    transition: 0.1s all ease-in-out;
+    /* transition-timing-function: ease; */
 }
 
 .svg-code {
