@@ -84,6 +84,7 @@ h2:hover {
     background: linear-gradient(rgb(240,240,240), rgb(180, 180, 180));
     box-shadow: 2px 2px 0px 0px grey;
     color: rgb(90, 90, 90);
+    
 }
 
 .tecla:active {
@@ -270,6 +271,11 @@ form > input.input-entries {
     font-size: 1rem;
     font-family: 'Consolas', 'Courier New', Courier, monospace;
     border-bottom: 5px solid rgb(92, 92, 92);
+
+    /* transition: 0.2s ease; */
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
 }
 
 form > input.input-entries:hover, form > input.input-entries:focus {
@@ -413,8 +419,6 @@ footer {
     vertical-align: middle;
 }
 
-
-
 #github-logo:hover {
     /* filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(270deg) brightness(95%) contrast(80%); */
     /* filter: invert(50%) sepia(100%) saturate(3000%) hue-rotate(260deg) brightness(100%) contrast(100%); */
@@ -550,33 +554,20 @@ table tr:hover {
     background-color: rgb(75, 75, 75);    
     border-radius: 0.5rem;
     cursor: pointer;
+
+    transition: 0.3s all ease;
 }
 
 .cube-pular {
     box-shadow: 3px 3px 0px 0px;
-}
-
-/* .cube:hover { */
-.cube:active {
-    /* margin-right: 30px; */
-    animation-name: empurrar;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes empurrar {
-    from {
-        margin-right: 1rem;
-    }
-    to {
-        margin-right: 3rem;
-    }
+    /* transition: 0.3s all ease; */
 }
 
 .cube-pular:hover {
-    animation-name: pular;
+    /* animation-name: pular;
     animation-duration: 0.5s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards; */
+    box-shadow: 20px 20px 10px 0px;
 }
 
 @keyframes pular {
@@ -588,6 +579,24 @@ table tr:hover {
     to {
         /* box-shadow: 20px 20px 10px 0px rgba(255,0,0,0.5); */
         box-shadow: 20px 20px 10px 0px;
+    }
+}
+
+/* .cube:hover { */
+.cube:active {
+    /* margin-right: 30px; */
+    /* animation-name: empurrar;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards; */
+    margin-right: 3rem;
+}
+
+@keyframes empurrar {
+    from {
+        margin-right: 1rem;
+    }
+    to {
+        margin-right: 3rem;
     }
 }
 
@@ -629,13 +638,15 @@ table tr:hover {
     /* border-style:ridge;
     border-color: rgb(189, 189, 189);
     border-width: 10px; */
-    
+    transition: 0.3s all ease;
 }
 
 .push-grid > div:hover {   
-    animation-name: descer;
+    /* animation-name: descer;
     animation-duration: 0.25s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards; */
+    box-shadow: inset 20px 20px 7px 0px black;
+    background-color: rgb(70, 70, 70);
 }
 
 @keyframes descer {
@@ -697,6 +708,8 @@ table tr:hover {
 #linkedin-logo-svg {
     /* fill: blue; */
     /* border: 1px solid black; */
+    margin: 0 auto;
+    display: block;
 }
 
 #linkedin-logo-svg:hover {
@@ -756,11 +769,26 @@ table tr:hover {
 
 #kis-body {
     padding: 1rem;
-    border: 2px solid rgb(180, 180, 180);
+    border: 2px solid rgb(220, 220, 220);
     border-radius: 1rem;
     width: 90%;
     display: block;
     margin: 0 auto;
+
+    color: rgb(50, 50, 50);
+}
+
+#kis-body:hover {
+    padding: 1rem;
+    /* border: 2px solid rgb(150, 150, 150); */
+    border-radius: 1rem;
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    color: black;
+    transform: scale(1.005);
+    background: linear-gradient(rgb(220, 220, 220), white);
+    /* cursor: pointer; */
 }
 
 #section_keep_it_simple p {
@@ -815,3 +843,42 @@ table tr:hover {
     }
 }
 
+.flex-box {
+    /* background-color: black; */
+    border: 1px solid rgb(170, 170, 170);
+    margin: 0 auto;
+    
+    width: 70vh;
+    height: 20vh;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.box, .box2 {
+    border: 1px solid rgb(170, 170, 170);
+    width: 5vh;
+    height: 50%;
+
+    transition: 0.3s all ease;
+}
+
+.box:hover, .box2:hover {
+    cursor: pointer;
+}
+
+.box:nth-of-type(odd):hover {
+    transform: translate(0, -20px);
+}
+
+.box:nth-of-type(even):hover {
+    transform: translate(0, 20px);
+}
+
+.box2:hover {
+    box-shadow: inset 10px 10px 3px gray;
+    background-color: lightgrey;
+}
