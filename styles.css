@@ -504,6 +504,7 @@ table tr:nth-child(even) {
 
 table tr:hover {
     background-color: rgb(140, 140, 140);
+    transition: 0.1s all ease;
 }
 
 #tbl-2 tr:hover {
@@ -562,6 +563,17 @@ table tr:hover {
     width: 80%;
     height: 30px;
     background: linear-gradient(90deg, red,green,blue);
+    transition: 0.2s all ease;
+}
+
+#rgb-gradient:hover {
+    cursor: pointer;
+}
+
+#rgb-gradient:active {
+    filter: brightness(2);
+    transform: scaleX(1.15);
+    cursor: pointer;
 }
 
 /* --------------------------------------- */
@@ -910,4 +922,38 @@ table tr:hover {
 .box2:hover {
     box-shadow: inset 10px 10px 3px gray;
     background-color: lightgrey;
+}
+
+span.tooltip {
+    position: relative;
+    /* color: #007cd8; */
+    /* text-decoration-color: inherit; */
+    border-bottom: 1px dashed black;
+    cursor: help;
+}
+
+span.tooltip:hover {
+    position: relative;
+    color: #007cd8;
+    text-decoration-color: #007cd8;
+    border-bottom: 1px dashed #007cd8;
+    cursor: help;
+}
+
+span.tooltip:active::after {
+    content: "Some content here giving context to the hovered word.";
+    position: absolute;
+    left: 0px;
+    top: 30px;
+    min-width: 200px;
+    background-color: rgb(248, 248, 186);
+    padding: 0.5rem;
+    color: black;
+    font-size: 0.75rem;
+    /* border-radius: 15%; */
+    box-shadow: 5px 5px 5px grey;
+    z-index: 1;
+    overflow: visible;
+    line-height: 1.15rem;
+    
 }
