@@ -67,7 +67,7 @@ h2 {
 
 h2:hover {
     text-decoration: underline;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 a[href="#top"] {
@@ -158,9 +158,14 @@ fique invisível quando a tecla é pressionada. */
     background-color: rgb(50, 50, 50);
     display: block;
     /* margin: 0 auto; */
-    width: 12.5%;
-    height: 0.5rem;
+    width: 20%;
+    height: 0.75rem;
     box-shadow: 5px 5px rgba(128, 128, 128, 0.5);
+    transition: 0.1s all ease-in-out;
+}
+
+.divider:active {
+    width: 100%;
 }
 
 main {
@@ -572,7 +577,7 @@ table tr:hover {
 
 #rgb-gradient:active {
     filter: brightness(2);
-    transform: scaleX(1.15);
+    transform: scaleX(1.15) scaleY(0.65);
     cursor: pointer;
 }
 
@@ -954,6 +959,73 @@ span.tooltip:active::after {
     box-shadow: 5px 5px 5px grey;
     z-index: 1;
     overflow: visible;
-    line-height: 1.15rem;
+    line-height: 1.15rem;   
+}
+
+/* --------------------- */
+
+div.social-container {
+    /* background-color: grey; */
+    width: 85%;
+    height: 400px;
+    margin: 0 auto;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 10px;
+    background-color: rgb(245, 245, 245);
+    position: relative;
+    padding: 0.75rem;
+    /* box-shadow: 5px 5px 10px grey; */
+}
+
+div.inner-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+div.profile-photo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
     
+    width: 70px;
+    height: 70px;
+    
+    background-color: rgb(210, 210, 210);
+    clip-path: circle(35px);
+}
+
+#profile-icon {
+    width: 65%;
+    height: 65%;
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 12px;
+}
+
+span.nome-da-pessoa {
+    position: absolute;
+    /* border: 1px solid black; */
+    left: 100px;
+    top: 25px;
+    font-size: 1.25rem;
+}
+
+span.profile-summary {
+    position: absolute;
+    left: 100px;
+    top: 55px;
+    font-size: 0.85rem;
+}
+
+div.social-post {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    /* border: 1px solid red; */
+    width: 90%;
+    font-size: 0.90rem;
+    color: grey;
+    text-align: justify;
 }
