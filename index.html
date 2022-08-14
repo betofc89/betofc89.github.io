@@ -5,12 +5,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Roberto Cabral - Portfolio and Projects</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
     </head>
     <body>
         <main>            
             <div id="main-wrap">
                 
-                <h1>Roberto Cabral - Portfolio and Projects</h1>
+                <h1 id="page-title">Roberto Cabral - Portfolio and Projects</h1>
+
+                
+                <section id="welcome-text">
+                    <div class="section-stripe"></div>
+                    <h1>Welcome</h1>
+                    <p>
+                        In this page you will find my projects, a little about me (bio), and also miscelaneous content created by me.<br>
+                    </p>
+                    <p>
+                        Feel free to get in touch through my social networks.
+                    </p>
+                    <p>
+                        The navbar below may help you navigate through that page.
+                    </p>
+                </section>
+
+                <!-- <hr> -->
 
                 <div id="navbar-strip">
                     <a href="#projects-section">
@@ -24,18 +42,24 @@
                     <a href="#misc-section">
                         <div class="navbar-element">Misc</div>
                     </a>
-                </div>
-                
+                </div> <!-- navbar-strip ending -->
+
                 <section id="projects-section">
                     <br><br>
+                    <div class="section-stripe"></div>
                     <h1>Projects</h1>
                     <div id="cont-projects"> <!-- Container de projetos -->
                         
                         <div class="proj-container">
                             <div class="header-proj-container">Testing HTML/CSS features</div>
                             <div class="body-proj-container">
-                                <p>Test page in which I implement some of the many existing HTML and CSS features.</p>
-                                <p><a href="./testing_html_css/testing_html_css.html" target="_blank">Click here to access</a></p>
+                                <p>Test page in which I implement some of the many existing HTML and CSS features.</p> 
+                            </div>
+                            <div class="link-proj-container">
+                                <a href="./testing_html_css/testing_html_css.html" target="_blank" class="link-project-access">Access</a>
+                            </div>
+                            <div class="techs-proj-container">
+                                HTML <i class="fa-brands fa-html5 tech-icon-logo"></i>, CSS <i class="fa-brands fa-css3-alt tech-icon-logo"></i>
                             </div>
                             <div class="footer-proj-container">
                                 Updated: Aug 13rd, 2022
@@ -46,7 +70,12 @@
                             <div class="header-proj-container">Excel data preparation</div>
                             <div class="body-proj-container">
                                 <p>A VBA (Visual Basic for Applications) algorithm that organizes exported data from a third-party software into an organized Excel table.</p>
-                                <p><a href="https://github.com/betofc89/excel-data-preparation" target="_blank">Click here to access</a></p>
+                            </div>
+                            <div class="link-proj-container">
+                                <a href="https://github.com/betofc89/excel-data-preparation" target="_blank" class="link-project-access">Access</a>
+                            </div>
+                            <div class="techs-proj-container">
+                                Excel <i class="fa-solid fa-file-excel tech-icon-logo"></i>, VBA <img src="../img/vba_logo.png" alt="VBA logo" class="vba-logo tech-icon-logo">
                             </div>
                             <div class="footer-proj-container">
                                 Updated: Jun 27th, 2022
@@ -57,7 +86,12 @@
                             <div class="header-proj-container">JavaScript course translation</div>
                             <div class="body-proj-container">
                                 <p>Forked from <a href="https://github.com/javascript-tutorial/pt.javascript.info" target="_blank" class="link-no-color">pt.javascript.info</a>, a translation endeavor of <a href="https://github.com/javascript-tutorial/en.javascript.info" target="_blank" class="link-no-color">en.javascript.info</a> made by Portuguese speakers.</p>
-                                <p><a href="https://github.com/betofc89/pt.javascript.info" target="_blank">Click here to access</a></p>
+                            </div>
+                            <div class="link-proj-container">
+                                <a href="https://github.com/betofc89/pt.javascript.info" target="_blank" class="link-project-access">Access</a>
+                            </div>
+                            <div class="techs-proj-container">
+                                --
                             </div>
                             <div class="footer-proj-container">
                                 Updated: Aug 13rd, 2022
@@ -68,10 +102,15 @@
                             <div class="header-proj-container">Mechanical Engineering final paper</div>
                             <div class="body-proj-container">
                                 <p>My Mechanical Engineering course conclusion work. A hydraulic system is simulated in Matlab using an artificial neural networks package.</p>
-                                <p><a href="https://github.com/betofc89/tcc-eng-mec" target="_blank">Click here to access</a></p>
+                            </div>
+                            <div class="link-proj-container">
+                                <a href="https://github.com/betofc89/tcc-eng-mec" target="_blank" class="link-project-access">Access</a>
+                            </div>
+                            <div class="techs-proj-container">
+                                Matlab <img src="../img/matlab_logo.png" alt="Matlab logo" class="matlab-logo tech-icon-logo">, Neural networks <img src="../img/neural_network_icon.png" alt="Neural network icon" class="neural-network-icon tech-icon-logo">
                             </div>
                             <div class="footer-proj-container">
-                                Updated: Mar 25th, 2022
+                                Updated: Dec 19th, 2018
                             </div>
                         </div>
 
@@ -80,6 +119,7 @@
 
                 <section id="bio-section">
                     <br><br>
+                    <div class="section-stripe"></div>
                     <h1>Bio</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quasi praesentium commodi sunt? Sed praesentium, molestiae exercitationem iusto adipisci laborum! Dicta enim soluta libero expedita iste suscipit ad ratione nihil?</p>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis veniam architecto sunt, sapiente cupiditate accusamus, nobis dolor, laborum perferendis ea nemo! Iste nesciunt saepe reiciendis aliquid veritatis possimus ab rem!</p>
@@ -95,6 +135,7 @@
                 
                 <section id="misc-section">
                     <br><br>
+                    <div class="section-stripe"></div>
                     <h1>Misc</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quasi praesentium commodi sunt? Sed praesentium, molestiae exercitationem iusto adipisci laborum! Dicta enim soluta libero expedita iste suscipit ad ratione nihil?</p>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis veniam architecto sunt, sapiente cupiditate accusamus, nobis dolor, laborum perferendis ea nemo! Iste nesciunt saepe reiciendis aliquid veritatis possimus ab rem!</p>
