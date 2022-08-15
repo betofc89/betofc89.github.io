@@ -6,6 +6,7 @@
 html {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #444;
+    background-color: rgb(235, 235, 235);
 }
 
 a {
@@ -21,17 +22,17 @@ body {
     /* background-color: rgba(0,0,0,0.85); */
     padding: 1rem;
     /* color: white; */
-    border: 3px solid black;
+    /* border: 3px solid black; */
     border-radius: 0.4rem;
     transition: 0.2s all ease-in-out;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 #page-title:active {
-    color: white;
+    /* color: white;
     background: linear-gradient(to right, blue, red);
     border: 3px solid white;
-    transform: scale(1.05, 1.05);
+    transform: scale(1.05, 1.05); */
 }
 
 main {
@@ -82,6 +83,8 @@ main #main-wrap {
     width: 100%;
     margin: 0 auto;
     
+    box-shadow: 0px 5px 8px grey;
+    z-index: 2;
 }
 
 .navbar-element {
@@ -98,6 +101,7 @@ main #main-wrap {
     border-bottom-width: 5px;
     border-bottom-style: solid;
     border-image: linear-gradient(to right, rgb(100, 100, 100), lightgray) 1;
+    border-bottom-left-radius: 0.2rem;
 }
 
 .navbar-element:hover {
@@ -111,7 +115,7 @@ main #main-wrap {
     /* box-shadow: inset 3px 3px gray; */
     color: black;
 
-    border-image: linear-gradient(to right, red, blue) 1;
+    border-image: linear-gradient(to right, blue, red) 1;
 }
 
 #navbar-strip a {
@@ -119,14 +123,13 @@ main #main-wrap {
 }
 
 #cont-projects {
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     max-width: 100%;
     display: grid;
     /* grid-template-columns: repeat(2, 1fr); */
     grid-auto-rows: 1fr;
     column-gap: 1.25rem;
     row-gap: 1rem;
-
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
@@ -135,16 +138,24 @@ main #main-wrap {
     /* align-items: stretch; */
     justify-content: flex-end;
     flex-direction: column;
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(245, 245, 245);
     border: 1px solid darkgray;
     border-radius: 0.5rem;
-    box-shadow: 0px 0px 5px 0px rgb(128, 128, 128);
+    box-shadow: 0px 0px 5px 2px rgb(128, 128, 128);
     transition: 0.2s all ease-in-out;
+    transform: scale(0.99, 0.99);
 }
 
 .proj-container:hover {
     background-color: white;
     box-shadow: 0px 0px 10px 3px rgb(128, 128, 128);
+    transform: scale(1,1);
+}
+
+.proj-container:active {
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0px 0px 5px 2px rgb(128, 128, 128);
+    transform: scale(0.99, 0.99);
 }
 
 .proj-container:hover .header-proj-container {
@@ -155,8 +166,13 @@ main #main-wrap {
     filter: opacity(0.75) saturate(1);
 }
 
+.proj-container:hover .header-proj-container {
+    background-color: #333;
+}
+
 .header-proj-container {
-    background-color: black;
+    background-color: #555;
+    /* background: linear-gradient(to right, white, white); */
     color: white;
     font-weight: bold;
     padding: 0.5rem 0rem 0.5rem 1rem;
@@ -275,6 +291,66 @@ main #main-wrap {
 a.link-no-color {
     color: gray;
     /* text-decoration: none; */
+}
+
+#bio-elements-container {
+    display: grid;
+    grid-auto-rows: 1fr;
+    /* align-items: center; */
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    /* grid-template-rows: repeat(auto-fit, minmax(1fr, 600px)); */
+    /* flex-direction: column; */
+}
+
+.bio-element {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    /* padding: 0.25rem 1rem; */
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0px 0px 5px 2px rgb(128, 128, 128);
+    /* margin: auto; */
+    /* margin: auto 0; */
+    /* margin-top: auto; */
+    transition: 0.2s all ease-in-out;
+}
+
+.bio-element:hover {
+    box-shadow: 0px 0px 10px 3px rgb(128, 128, 128);
+}
+
+.bio-element:hover .bio-element-header {
+    background-color: #333;
+    /* border-bottom: 5px solid green; */
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    /* border-image: linear-gradient(to right, green, yellow); */
+    border-image: linear-gradient(to right, blue, red) 1;
+}
+
+.bio-element-header {
+    background-color: #555;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 0rem 0.5rem 1rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    border-image: linear-gradient(to right, rgb(100, 100, 100), lightgray) 1;
+    transition: 0.2s all ease-in-out;
+}
+
+.bio-element-body {
+    /* background-color: orange; */
+    padding: 0.5rem 0rem 0.5rem 1rem;
+}
+
+.bio-element p {
+    /* margin: auto 0; */
+    /* background-color: orange; */
 }
 
 footer {
