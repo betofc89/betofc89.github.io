@@ -983,10 +983,7 @@ span.tooltip:active::after {
     box-shadow: 0px 4px 2px grey;
     z-index: 1;
     position: relative;
-
     margin-bottom: 2rem;
-
-    
 }
 
 .social-container::before {
@@ -1007,6 +1004,42 @@ span.tooltip:active::after {
     opacity: 1;
 }
 
+/* ------------------------------------------- */
+
+.social-container-yellow-variant {
+    display: flex;
+    flex-direction: column;
+    background: repeating-radial-gradient(circle at 2.75rem 2.85rem, rgba(255, 230, 168, 0.5), rgba(255, 210, 130, 0.5) 80px);
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid rgb(255, 204, 110);
+    border-radius: 30px;
+    box-shadow: 0px 4px 2px grey;
+    z-index: 1;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.social-container-yellow-variant::before {
+    background: repeating-radial-gradient(circle at 2.75rem 2.85rem, rgba(255, 230, 168, 0.6), rgba(255, 210, 130, 0.6) 180px);
+    z-index: -1;
+    opacity: 0;
+    transition: 0.2s opacity ease-in-out;
+    border-radius: 30px;
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.social-container-yellow-variant:hover::before {
+    opacity: 1;
+}
+
+/* ------------------------------------------- */
+
 .social-container:hover .img-social-post img {
     filter: saturate(1);
     transition: 0.2s all ease;
@@ -1025,24 +1058,43 @@ span.tooltip:active::after {
     filter: saturate(0.25);
 }
 
+/* ---------------------------------------- */
+
 .header-social-container {
     display: flex;
     flex-direction: row;
-
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
 }
 
 .profile-picture {
+    width: 70px;
     background-color: #bbb;
     padding: 0.5rem;
     clip-path: circle();
 }
 
 .profile-picture img {
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    /* width: 50px; */
+    /* height: 50px; */
     margin: 0;
+}
+
+.profile-picture img[src="/img/isaac-newton.jpg"] {
+    width: 100%;
+    transform: scale(1.8, 1.8) translate(0px, 5px);
+}
+
+.profile-picture img[src="/img/moyses-nussenzveig-2.jpg"] {
+    /* width: 180%; */
+    width: 100%;
+    transform: scale(1.65, 1.65) translate(1px, 3px);
+}
+
+.profile-picture img[src="/img/richard-feynman.jpg"] {
+    transform: scale(1.4, 1.4) translate(0, 5px);
 }
 
 .container-name-profession {
@@ -1130,7 +1182,7 @@ span.tooltip:active::after {
     /* background-color: #bbb; */
     background: rgba(120, 120, 120, 0.25);
     border-radius: 30px;
-    padding: 0.15rem;
+    padding: 0.33rem;
     margin-bottom: 0;
 }
 
@@ -1139,11 +1191,30 @@ span.tooltip:active::after {
 
     /* background-color: #ddd; */
     border-radius: 10px;
-    padding: 0.5rem;
+    padding: 0.25rem;
 
     cursor: pointer;
 }
 
 .button-social-container:hover {
-    color: rgb(46, 46, 255);
+    /* color: rgb(46, 46, 255); */
+    color: white;
+    background-color: grey;
+    /* transition: 0.3s all ease-in-out; */
+}
+
+.button-social-container:active {
+    background-color: white;
+    color: #777;
+    /* transition: 0.5s all ease-out; */
+}
+
+.social-container-yellow-variant .button-social-container:hover {
+    background-color: rgb(216, 148, 0);
+}
+
+.social-container-yellow-variant .button-social-container:active {
+    background-color: white;
+    color: rgb(216, 148, 0);;
+    /* transition: 0.5s all ease-out; */
 }
