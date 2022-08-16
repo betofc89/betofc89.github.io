@@ -124,7 +124,7 @@ main #main-wrap {
 }
 
 .cont-projects {
-    /* margin-top: 2rem; */
+    margin-top: 2rem;
     max-width: 100%;
     display: grid;
     /* grid-template-columns: repeat(2, 1fr); */
