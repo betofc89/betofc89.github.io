@@ -17,6 +17,7 @@ body {
     max-width: 600px;
     margin: 0 auto;
     color: rgb(50, 50, 50);
+    background-color: #eee;
 }
 
 #wrapper {
@@ -170,6 +171,102 @@ a[href="#top"]:hover::after {
     content: " (back to top)";
     
 }
+
+/* ----------------------------------- */
+
+.info-box {
+    position: relative;
+    display: block;
+    font-size: medium;
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    padding: 20px 8px 20px 16px;
+    color: white;
+}
+
+@font-face{
+    font-family: "Font Awesome Solid";
+    /* font-weight: 400; */
+    /* font-style: normal; */
+    src: url(webfonts/fa-solid-900.woff2);
+}
+
+.info-box-text-content::before {
+    font-family: "Font Awesome Solid";
+    content: "\f05a";
+    display: inline-block;
+    /* min-width: 30px; */
+    margin-right: 0.75rem;
+    font-size: medium;
+}
+
+.yellow {
+    color: inherit;
+    background-color: white;
+    border: 1px solid #c7bb1a;
+    border-left: 7px solid #c7bb1a;
+}
+
+.light-green {
+    color: inherit;
+    background-color: white;
+    border: 1px solid #32862a;
+    border-left: 7px solid #44862a;
+}
+
+.light-green:hover {
+    /* background-color: #1f375f; */
+}
+
+.dark-blue {
+    background-color: #152239;
+    border: 1px solid #2a4c86;
+    border-left: 7px solid #2a4c86;
+}
+
+/* .dark-blue:hover {
+    background-color: #1f375f;
+} */
+
+/* .botao-close */
+.botao-close {
+    float: right;
+    display: flex;
+    width: 32px;
+    height: 32px;
+    margin-top: -8px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: medium;
+}
+
+.light-green .botao-close {
+    color: #4fc24b;
+}
+
+.light-green .botao-close:hover i {
+    color: #2a8639;
+}
+
+.yellow .botao-close {
+    color: #d7da26;
+}
+
+.yellow .botao-close:hover i {
+    color: #a9ac19;
+}
+
+.dark-blue .botao-close {
+    color: #4b7ec2;
+}
+
+.dark-blue .botao-close:hover i {
+    color: #2a4c86;
+}
+
+
 
 /* ----------------------------------- */
 
@@ -1211,7 +1308,7 @@ span.tooltip:active::after {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    font-size: medium;
+    font-size: small;
     margin-bottom: 0.5rem;
 }
 
@@ -1222,7 +1319,7 @@ span.tooltip:active::after {
 .comments-shares-cont {
     display: flex;
     flex-direction: row;
-
+    
     justify-content: flex-end;
     align-items: center;
 }
@@ -1261,7 +1358,7 @@ span.tooltip:active::after {
 
 .button-social-container {
     margin-right: 1rem;
-
+    font-size: medium;
     /* background-color: #ddd; */
     border-radius: 10px;
     padding: 0.25rem;
