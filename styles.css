@@ -142,14 +142,14 @@ main #main-wrap {
     background-color: rgb(245, 245, 245);
     border: 1px solid darkgray;
     border-radius: 0.5rem;
-    box-shadow: 0px 0px 5px 2px rgb(128, 128, 128);
+    box-shadow: 0px 0px 4px 1px rgb(128, 128, 128);
     transition: 0.2s all ease-in-out;
     transform: scale(0.99, 0.99);
 }
 
 .proj-container:hover {
     background-color: white;
-    box-shadow: 0px 0px 10px 3px rgb(128, 128, 128);
+    box-shadow: 0px 0px 5px 2px rgb(128, 128, 128);
     transform: scale(1,1);
 }
 
@@ -215,8 +215,8 @@ main #main-wrap {
 }
 
 .link-project-access:active {
-    box-shadow: 3px 3px black;
-    background: radial-gradient(circle at 50%, white 30%, rgb(75, 75, 255));
+    /* box-shadow: 3px 3px black; */
+    background: radial-gradient(circle at 50%, rgb(152, 152, 255) 50%, rgb(75, 75, 255));
 }
 
 .link-proj-container {
@@ -312,7 +312,7 @@ a.link-no-color {
     border: 1px solid rgb(192, 192, 192);
     border-radius: 0.5rem;
     margin-bottom: 1rem;
-    box-shadow: 0px 0px 5px 2px rgb(128, 128, 128);
+    box-shadow: 0px 0px 4px 1px rgb(128, 128, 128);
     /* margin: auto; */
     /* margin: auto 0; */
     /* margin-top: auto; */
@@ -322,7 +322,7 @@ a.link-no-color {
 
 .bio-element:hover {
     background-color: white;
-    box-shadow: 0px 0px 10px 3px rgb(128, 128, 128);
+    box-shadow: 0px 0px 5px 2px rgb(128, 128, 128);
     transform: scale(1,1);
 }
 

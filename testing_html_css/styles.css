@@ -69,25 +69,42 @@ h1 {
     margin-top: 1rem;
 }
 
+#summary-new a:last-of-type {
+    margin-bottom: 1rem;
+}
+
 #summary-new a {
     /* background-color: #040405; */
-    border: 1px solid grey;
-    margin: 0 1rem 0.75rem 1rem;
+    border: 1px solid rgb(175, 175, 175);
+    margin: 0 1rem 0.5rem 1rem;
     padding: 0.5rem;
     /* border-radius: 10px; */
     text-decoration: none;
     color: inherit;
     text-align: center;
     /* color: #dcfcde; */
-    box-shadow: 0px 5px 10px 0px grey;
+    box-shadow: 3px 3px 2px 0px grey;
+
+    background: linear-gradient(0deg, rgb(210, 210, 210), rgb(245, 245, 245), rgb(210, 210, 210));
 }
 
 #summary-new a:hover {
     /* box-shadow: inset 3px 3px 2px grey; */
-    box-shadow: 0px 0px 2px 0px grey;
+    /* box-shadow: 0px 0px 2px 0px grey; */
     background-color: #ddd;
-    transform: translate(0px, 3px);
+    /* transform: translate(0px, 3px); */
     transition: 0.2s all ease-in-out;
+
+    /* filter: saturate(); */
+
+    background: linear-gradient(0deg, rgb(200, 200, 200), rgb(235, 235, 235), rgb(200, 200, 200));
+}
+
+#summary-new a:active {
+    box-shadow: inset 3px 3px 2px 0px rgb(95, 95, 95);
+    transition: 0s all ease-in-out;
+    background: linear-gradient(0deg, rgb(220, 220, 220), rgb(185, 185, 185), rgb(220,220,220));
+    transform: translate(3px,3px);
 }
 
 /* -------------------------------------------------- */
@@ -1033,6 +1050,9 @@ span.tooltip:active::after {
     z-index: 1;
     position: relative;
     margin-bottom: 2rem;
+
+    font-family: Arial, Helvetica, sans-serif;
+    /* line-height: 0.5rem; */
 }
 
 .social-container::before {
@@ -1067,6 +1087,8 @@ span.tooltip:active::after {
     z-index: 1;
     position: relative;
     margin-bottom: 2rem;
+
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .social-container-yellow-variant::before {
@@ -1159,11 +1181,11 @@ span.tooltip:active::after {
 
 .profile-name {
     /* background-color: green; */
-    font-size: x-large;
+    font-size: large;
 }
 
 .profile-profession {
-    font-size: medium;
+    font-size: small;
 }
 
 .content-social-container {
@@ -1172,13 +1194,15 @@ span.tooltip:active::after {
 
 .content-social-container p {
     margin: 1rem 0 0 0;
+    line-height: 1.75rem;
+    font-size: medium;
 }
 
 .date-time-social-container {
-    font-size: medium;
+    font-size: small;
     /* background-color: red; */
     margin-bottom: 1rem;
-    margin-top: 0.25rem;
+    margin-top: 0.75rem;
     color: #777;
 }
 
