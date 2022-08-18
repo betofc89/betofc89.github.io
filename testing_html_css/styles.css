@@ -309,7 +309,60 @@ a[href="#top"]:hover::after {
     color: #2a4c86;
 }
 
+/* ----------------------------------- */
 
+.moving-bars-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid black;
+    min-height: 500px;
+    background-color: #ddd;
+}
+
+.bar-element {
+    width: 40%;
+    height: 30px;
+    border-bottom: 1px solid grey;
+    background-color: blue;
+    animation: shrink-bar 1.5s;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.bar-element:hover {
+    animation: grow-bar 0.5s;
+    animation-fill-mode: forwards;
+    /* animation-delay: 2.5s; */
+    /* background-color: red; */
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes grow-bar {
+    /* from {width: 20%; background-color: black;}
+    to {width: 80%; background-color: red} */
+
+    0% {
+        width: 40%; 
+        background-color: blue;
+    }
+    100% {
+        width: 100%; 
+        /* background: linear-gradient(to right, black, red); */
+        background-color: red;
+    }
+}
+
+@keyframes shrink-bar {
+    0% {
+        width: 100%; 
+        /* background: linear-gradient(to right, black, red); */
+        background-color: red;
+    }
+    100% {
+        width: 40%; 
+        background-color: blue;
+    }
+}
 
 /* ----------------------------------- */
 
