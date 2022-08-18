@@ -20,6 +20,49 @@ body {
     background-color: #eee;
 }
 
+nav {
+    background-color: #ccc;
+    z-index: 2;
+    /* position: sticky; */
+    position: relative;
+    top: 0.25rem;
+    /* top: 0.25rem; */
+    display: inline-flexbox;
+    /* flex-direction: row; */
+    /* background-color: black; */
+    /* color: green; */
+    padding: 0.25rem 0 0.25rem 0.5rem;
+    font-size: medium;
+    /* border-bottom: 1px dashed green; */
+    border: 2px solid #aaa;
+    border-radius: 5px;
+    /* margin-top: 0.25rem; */
+    color: #555;
+    /* opacity: 0.25; */
+    border-left: 4px solid #aaa;
+    transition: 0.2s opacity ease-in-out;
+}
+
+nav:hover {
+    /* opacity: 1; */
+    
+}
+
+nav a {
+    /* text-decoration: none; */
+    color: inherit;
+}
+.nav-element {
+    /* padding: 0.5rem; */
+    /* cursor: pointer; */
+}
+
+.nav-element a:hover {
+    /* background-color: green; */
+    color: green;
+    text-decoration: underline;
+}
+
 #wrapper {
     margin: 0 0.5rem;
 }
@@ -63,7 +106,7 @@ h1 {
         -3px -3px 15px 15px red
     ; */
     box-shadow: 0px 15px 15px 0px grey;
-    background-color: #eee;
+    background-color: #ddd;
 }
 
 #summary-new a:first-of-type {
@@ -841,12 +884,12 @@ table tr:hover {
     margin: 0 auto;
     /* border: 1px solid grey; */
 
-    width: 20%;
-    height: 100px;
+    width: 80%;
+    height: 350px;
 
     display: grid;
-    grid-template-columns: auto auto;
-    gap: 3px;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    gap: 1px;
 }
 
 .push-grid > div {
@@ -889,34 +932,44 @@ table tr:hover {
 .square-to-clip {
     display: block;
     margin: 0 auto;
-    background-color: red;
-    width: 300px;
-    height: 300px;
+    background-color: blue;
+    width: 200px;
+    height: 200px;
     /* clip-path: circle(40%); */
+    
 }
 
-.circle-clipped {
+.square-to-clip:active {
+    /* clip-path: circle();
+    transition: 0.5s all ease; */
     animation-name: circle-cycle;
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
+/* .circle-clipped {
+    animation-name: circle-cycle;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+} */
+
 @keyframes circle-cycle {
     from {
         clip-path: circle(100%);
-        background-color: red;
+        background-color: blue;
     }
     to {
-        clip-path: circle(20%);
-        background-color: rgb(100, 0, 0);
+        clip-path: circle(1%);
+        background-color: red;
     }
 }
 
-.circle-clipped:active {
+/* .circle-clipped:active {
     clip-path: circle(40%);
-    /* background: radial-gradient(red 15%,white); */
-}
+    
+} */
 
 /* .linkedin-clipped {
     clip-path: path('M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z');
