@@ -14,6 +14,30 @@ a {
     color: blue;
 }
 
+a.external-link:after {
+    background-color: #444;
+    content: "";
+    display: inline-flex;
+    /* height: 10px; */
+    /* width: 10px; */
+    height: 0.6rem;
+    width: 0.6rem;
+    margin-left: 5px;
+    /* background-image: url(https://developer.mozilla.org/static/media/external.ad7e40a95bc765963433.svg); */
+    /* -webkit-mask-image: url(https://developer.mozilla.org/static/media/external.ad7e40a95bc765963433.svg); */
+    -webkit-mask-image: url(./img/external-link-icon.svg);
+
+    -webkit-mask-size: cover;
+    /* background: url(https://developer.mozilla.org/static/media/external.ad7e40a95bc765963433.svg) no-repeat 100% 0;
+    background-size: 16px 16px;
+    padding-right: 19px;
+    background-color: black; */
+}
+
+a.external-link:hover:after {
+    background-color: #999;
+}
+
 body {
     margin: 0 auto;
 }
@@ -142,15 +166,15 @@ main #main-wrap {
     background-color: rgb(245, 245, 245);
     border: 1px solid darkgray;
     border-radius: 0.5rem;
-    box-shadow: 0px 0px 4px 1px rgb(128, 128, 128);
+    box-shadow: 0px 0px 4px 0px rgb(128, 128, 128);
     transition: 0.2s all ease-in-out;
-    transform: scale(0.99, 0.99);
+    /* transform: scale(0.99, 0.99); */
 }
 
 .proj-container:hover {
     background-color: white;
-    box-shadow: 0px 0px 5px 2px rgb(128, 128, 128);
-    transform: scale(1,1);
+    box-shadow: 0px 0px 10px 0px rgb(128, 128, 128);
+    /* transform: scale(1,1); */
 }
 
 .proj-container:active {
@@ -317,13 +341,13 @@ a.link-no-color {
     /* margin: auto 0; */
     /* margin-top: auto; */
     transition: 0.2s all ease-in-out;
-    transform: scale(0.99, 0.99);
+    /* transform: scale(0.99, 0.99); */
 }
 
 .bio-element:hover {
     background-color: white;
     box-shadow: 0px 0px 5px 2px rgb(128, 128, 128);
-    transform: scale(1,1);
+    /* transform: scale(1,1); */
 }
 
 .bio-element:hover .bio-element-header {
@@ -349,7 +373,7 @@ a.link-no-color {
 
 .bio-element-body {
     /* background-color: orange; */
-    padding: 0.5rem 0rem 0.5rem 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
 .bio-element p {
@@ -362,6 +386,11 @@ a.link-no-color {
     color: #444;
     text-decoration: none;
     border-bottom: 1px dashed grey;
+}
+
+.subtle-link:hover {
+    color: #999;
+    border-bottom: none;
 }
 
 footer {
