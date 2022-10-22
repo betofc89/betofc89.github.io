@@ -113,7 +113,7 @@ p {
   display: flex;
   align-items: center;
 
-  position: absolute;
+  position: fixed;
   top: 10px;
   right: 10px;
 }
@@ -134,7 +134,7 @@ p {
 
 .slider {
   /* background-color: #ccc; */
-  background-color: rgb(255, 230, 148);
+  background-color: rgb(253, 221, 115);
   cursor: pointer;
   position: absolute;
 
@@ -190,6 +190,14 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+@media only screen and (max-width: calc(800px + 60px + 10px + 1rem + 3rem)) {
+  /* Estou adicionando este bloco para impedir que o switcher desça junto com a rolagem da tela se o tamanho da tela for menor que um valor calculado. */
+  /* 800px: main max-width; 60px: .theme-switch width; 10px: .theme-switch-wrapper right position; 1rem: #main-wrap margin; 3rem: margem de segurança */
+  .theme-switch-wrapper {
+    position: absolute;
+  }
 }
 /* ------------------------------------- */
 
@@ -281,6 +289,7 @@ a.link-no-color {
 }
 
 @media only screen and (max-width: 400px) {
+  /* Se o tamanho da tela for menor que 400px, faço alguns ajustes no navbar. */
   #navbar-strip {
     position: sticky;
     top: 5px;
@@ -348,7 +357,7 @@ a.link-no-color {
   display: grid;
   grid-auto-rows: 1fr;
   column-gap: 1.25rem;
-  row-gap: 1rem;
+  row-gap: 1.25rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 

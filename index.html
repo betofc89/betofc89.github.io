@@ -12,8 +12,6 @@
     />
   </head>
 
-  <script src="./script.js"></script>
-
   <body>
     <main>
       <div id="main-wrap">
@@ -26,6 +24,9 @@
             <div class="slider round"></div>
           </label>
         </div>
+
+        <!-- O script abaixo precisou ser colocado aqui nesta posição porque o mesmo não estava conseguindo enxergar o elemento de id "cb-dark-theme" se este script fosse colocado dentro da tag head. -->
+        <script src="./script-dark-switch.js"></script>
 
         <section id="welcome-text">
           <div class="section-stripe"></div>
