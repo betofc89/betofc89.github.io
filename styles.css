@@ -12,6 +12,7 @@
   --element-header-font-color: rgb(255, 255, 255);
 
   --box-shadow-color: rgb(128, 128, 128);
+  --section-stripe-box-shadow-color: rgba(128, 128, 128, 1);
 
   --border-color: rgb(169, 169, 169);
   --border-color-lighter: rgb(204, 204, 204);
@@ -19,9 +20,11 @@
   --link-access-font-color: rgb(33, 33, 255);
   --link-access-font-color-hover: rgb(255, 255, 255);
   --link-access-border-color: rgb(75, 75, 255);
-  --link-access-bg-color-hover: rgb(75, 75, 255);
+  --link-access-bg-color-hover: var(--link-access-border-color);
   --link-access-bg-color-active-gradient-color-1: rgb(152, 152, 255);
-  --link-access-bg-color-active-gradient-color-2: rgb(75, 75, 255);
+  --link-access-bg-color-active-gradient-color-2: var(
+    --link-access-border-color
+  );
 
   --thematic-gradient-color-1: blue;
   --thematic-gradient-color-2: red;
@@ -44,16 +47,19 @@
   --element-header-font-color: rgb(255, 255, 255);
 
   --box-shadow-color: rgba(128, 128, 128, 0); /* Adicionei um alpha igual a 0 */
+  --section-stripe-box-shadow-color: rgba(128, 128, 128, 0);
 
-  --border-color: rgb(169, 169, 169);
-  --border-color-lighter: rgb(204, 204, 204);
+  --border-color: rgb(65, 65, 65);
+  --border-color-lighter: rgb(35, 35, 35);
 
-  --link-access-font-color: rgb(81, 81, 255);
+  --link-access-font-color: rgb(122, 122, 255);
   --link-access-font-color-hover: rgb(255, 255, 255);
-  --link-access-border-color: rgb(75, 75, 255);
-  --link-access-bg-color-hover: rgb(75, 75, 255);
+  --link-access-border-color: rgb(122, 122, 255);
+  --link-access-bg-color-hover: var(--link-access-border-color);
   --link-access-bg-color-active-gradient-color-1: rgb(152, 152, 255);
-  --link-access-bg-color-active-gradient-color-2: rgb(75, 75, 255);
+  --link-access-bg-color-active-gradient-color-2: var(
+    --link-access-border-color
+  );
 
   --thematic-gradient-color-1: blue;
   --thematic-gradient-color-2: red;
@@ -100,7 +106,7 @@ section {
     var(--thematic-gradient-color-2)
   );
   height: 10px;
-  box-shadow: 3px 3px grey;
+  box-shadow: 3px 3px var(--section-stripe-box-shadow-color);
 }
 
 p {
@@ -108,7 +114,8 @@ p {
 }
 
 /* ------------------------------------- */
-
+/* Peguei o código abaixo da seguinte página: */
+/* https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8 */
 .theme-switch-wrapper {
   display: flex;
   align-items: center;
@@ -258,7 +265,7 @@ a.link-no-color {
   align-items: center;
   height: 4rem;
   border-radius: 0.4rem;
-  border: 1px solid rgb(128, 128, 128);
+  border: 1px solid var(--border-color-lighter);
   width: 100%;
   margin: 0 auto;
 
@@ -357,7 +364,7 @@ a.link-no-color {
   display: grid;
   grid-auto-rows: 1fr;
   column-gap: 1.25rem;
-  row-gap: 1.25rem;
+  row-gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
