@@ -1,289 +1,512 @@
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Roberto Cabral - Portfolio and Projects</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
-    </head>
-    <body>
-        <main>            
-            <div id="main-wrap">
-                
-                <h1 id="page-title">Roberto Cabral - Portfolio and Projects</h1>
-                
-                <section id="welcome-text">
-                    <div class="section-stripe"></div>
-                    <h1>Welcome</h1>
-                    <p>
-                        In this page you will find my projects, a little about me (bio), and also a misc section with other projects I'm involved.<br>
-                    </p>
-                    <p>
-                        Feel free to get in touch through my <a href="https://www.linkedin.com/in/roberto-de-freitas-cabral/" class="subtle-link external-link" target="_blank">LinkedIn</a> or <a href="mailto:roberto.de.freitas.cabral@outlook.com" class="subtle-link">e-mail</a>.
-                    </p>
-                    <p>
-                        The navbar below may help you navigate through that page.
-                    </p>
-                </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roberto Cabral - Portfolio and Projects</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="./img/roberto-fav-icon.png" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"
+    />
+  </head>
 
-                <!-- <hr> -->
+  <script src="./script.js"></script>
 
-                <div id="navbar-strip">
-                    <a href="#projects-section">
-                        <div class="navbar-element">Projects</div>
-                    </a>
+  <body>
+    <main>
+      <div id="main-wrap">
+        <h1 id="page-title">Roberto Cabral - Portfolio and Projects</h1>
 
-                    <a href="#bio-section">
-                        <div class="navbar-element">Bio</div>
-                    </a>
+        <!-- Dark mode switcher source: https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8 -->
+        <div class="theme-switch-wrapper">
+          <label class="theme-switch" for="cb-dark-theme">
+            <input type="checkbox" id="cb-dark-theme" onchange="mudarTema()" />
+            <div class="slider round"></div>
+          </label>
+        </div>
 
-                    <a href="#misc-section">
-                        <div class="navbar-element">Misc</div>
-                    </a>
-                </div> <!-- navbar-strip ending -->
+        <section id="welcome-text">
+          <div class="section-stripe"></div>
+          <h1>Welcome</h1>
+          <p>
+            In this page you will find my projects, a little about me (bio), and
+            also a misc section with other projects I'm involved.<br />
+          </p>
+          <p>
+            Feel free to get in touch through my
+            <a
+              href="https://www.linkedin.com/in/roberto-de-freitas-cabral/"
+              class="subtle-link external-link"
+              target="_blank"
+              >LinkedIn</a
+            >
+            or
+            <a
+              href="mailto:roberto.de.freitas.cabral@outlook.com"
+              class="subtle-link"
+              >e-mail</a
+            >.
+          </p>
+          <p>The navbar below may help you navigate through that page.</p>
+        </section>
 
-                <section id="projects-section">
-                    <br><br>
-                    <div class="section-stripe"></div>
-                    <h1>Projects</h1>
-                    <!-- <p>Projects related to web development.</p> -->
-                    <div class="cont-projects"> <!-- Container de projetos -->
-                        
-                        <div class="proj-container">
-                            <div class="header-proj-container">Culinary Recipes WebApp</div>
-                            <div class="body-proj-container">
-                                <p>A small webapp containing various culinary recipes developed with HTML, CSS, Vue.js, Node.js, Express, and MongoDB Atlas.</p>
-                                <!-- <p>Github repos: <a href="https://github.com/betofc89/gestao-cozinha" class="subtle-link external-link" target="_blank">Front-end</a> / <a href="https://github.com/betofc89/api_gestao_cozinha" class="subtle-link external-link" target="_blank">Back-end</a></p> -->
-                            </div>
-                            <div class="link-proj-container">
-                                <a href="https://github.com/betofc89/gestao-cozinha" target="_blank" class="link-project-access">GitHub Repo</a>
-                                <a href="https://youtu.be/5kze4z9TS_A" target="_blank" class="link-project-access">Video Demo</a>
-                            </div>
-                            <div class="techs-proj-container">
-                                <div class="tech-pill">HTML <i class="fa-brands fa-html5 tech-icon-logo"></i></div>
-                                <div class="tech-pill">CSS <i class="fa-brands fa-css3-alt tech-icon-logo"></i></div>
-                                <div class="tech-pill">Vue.js <img src="../img/vuejs-logo.png" alt="Vue.js logo" class="vba-logo tech-icon-logo"></div>
-                                <div class="tech-pill">Node.js <img src="../img/nodejs-logo.png" alt="Node.js logo" class="nodejs-logo tech-icon-logo"></div>
-                                <div class="tech-pill">Express</div>
-                                <div class="tech-pill">MongoDB <img src="../img/mongodb-logo-2.png" alt="MongoDB logo" class="vba-logo tech-icon-logo"></div>
-                                
-                            </div>
-                            <div class="footer-proj-container">
-                                Updated: Sep 16th, 2022
-                            </div>
-                        </div>
-                        
-                        <div class="proj-container">
-                            <div class="header-proj-container">Blockchain Interaction</div>
-                            <div class="body-proj-container">
-                                <p>A page where a user will be able to interact with a smart contract on the Ethereum blockchain.</p>
-                            </div>
-                            <div class="link-proj-container">
-                                <a href="#projects-section" class="link-project-access">Access (Soon)</a>
-                            </div>
-                            <div class="techs-proj-container">
-                                <div class="tech-pill">Solidity<img src="../img/solidity-logo-blue.png" alt="Solidity logo" class="nodejs-logo tech-icon-logo"></div>
-                                <div class="tech-pill">Ethereum<img src="../img/ethereum-logo.png" alt="Ethereum logo" class="nodejs-logo tech-icon-logo"></div>
-                                <div class="tech-pill">HTML <i class="fa-brands fa-html5 tech-icon-logo"></i></div>
-                                <div class="tech-pill">CSS <i class="fa-brands fa-css3-alt tech-icon-logo"></i></div>
-                                <div class="tech-pill">Vue.js <img src="../img/vuejs-logo.png" alt="Vue.js logo" class="vba-logo tech-icon-logo"></div>
-                            </div>
-                            
-                            
-                            <div class="footer-proj-container">
-                                Updated: (soon)
-                            </div>
-                        </div>
+        <!-- <hr> -->
 
-                        <div class="proj-container">
-                            <div class="header-proj-container">This Portfolio Page</div>
-                            <div class="body-proj-container">
-                                <p>A portfolio page where I offer a brief view of my projects, bio, and other contents. Features to come: <a href="https://jdan.github.io/98.css/" class="subtle-link external-link" target="_blank">Windows 98 Theme</a>, <a href="https://m3.material.io/" class="subtle-link external-link" target="_blank">Material Design</a> Theme, and other projects.</p>
-                            </div>
-                            <div class="link-proj-container">
-                                <a href="https://github.com/betofc89/betofc89.github.io" target="_blank" class="link-project-access">GitHub Repo</a>
-                            </div>
-                            <div class="techs-proj-container">
-                                <div class="tech-pill">HTML <i class="fa-brands fa-html5 tech-icon-logo"></i></div>
-                                <div class="tech-pill">CSS <i class="fa-brands fa-css3-alt tech-icon-logo"></i></div>
-                            </div>
-                            <div class="footer-proj-container">
-                                Updated: Oct 21st, 2022
-                            </div>
-                        </div>
+        <div id="navbar-strip">
+          <a href="#projects-section">
+            <div class="navbar-element">Projects</div>
+          </a>
 
-                        
-                        
-                        
+          <a href="#bio-section">
+            <div class="navbar-element">Bio</div>
+          </a>
 
-                        
-                        
-                        
+          <a href="#misc-section">
+            <div class="navbar-element">Misc</div>
+          </a>
+        </div>
+        <!-- navbar-strip ending -->
 
-                    </div>
-                </section>
+        <!-- PROJECTS SECTION -->
 
-                <section id="bio-section">
-                    <br><br>
-                    <div class="section-stripe"></div>
-                    <h1>Bio</h1>
-                    
-                    <div id="bio-elements-container">
+        <section id="projects-section">
+          <br /><br />
+          <div class="section-stripe"></div>
+          <h1>Projects</h1>
+          <p>Projects related to web development.</p>
+          <div class="cont-projects">
+            <!-- Container de projetos -->
 
-                        <div class="bio-element">
-                            <div class="bio-element-header">
-                                2003
-                            </div>
-                            <div class="bio-element-body">
-                                <p>First contact with HTML through written tutorials.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="bio-element">
-                            <div class="bio-element-header">
-                                2010 - 2011
-                            </div>
-                            <div class="bio-element-body">
-                                <p>Developed a simple web application using HTML, CSS, JavaScript, PHP, and MySQL.</p>
-                            </div>
-                        </div>
+            <div class="proj-container">
+              <div class="header-proj-container">Culinary Recipes WebApp</div>
+              <div class="body-proj-container">
+                <p>
+                  A small webapp containing various culinary recipes developed
+                  with HTML, CSS, Vue.js, Node.js, Express, and MongoDB Atlas.
+                </p>
+                <!-- <p>Github repos: <a href="https://github.com/betofc89/gestao-cozinha" class="subtle-link external-link" target="_blank">Front-end</a> / <a href="https://github.com/betofc89/api_gestao_cozinha" class="subtle-link external-link" target="_blank">Back-end</a></p> -->
+              </div>
+              <div class="link-proj-container">
+                <a
+                  href="https://github.com/betofc89/gestao-cozinha"
+                  target="_blank"
+                  class="link-project-access"
+                  >GitHub Repo</a
+                >
+                <a
+                  href="https://youtu.be/5kze4z9TS_A"
+                  target="_blank"
+                  class="link-project-access"
+                  >Video Demo</a
+                >
+              </div>
+              <div class="techs-proj-container">
+                <div class="tech-pill">
+                  HTML <i class="fa-brands fa-html5 tech-icon-logo"></i>
+                </div>
+                <div class="tech-pill">
+                  CSS <i class="fa-brands fa-css3-alt tech-icon-logo"></i>
+                </div>
+                <div class="tech-pill">
+                  Vue.js
+                  <img
+                    src="../img/vuejs-logo.png"
+                    alt="Vue.js logo"
+                    class="vba-logo tech-icon-logo"
+                  />
+                </div>
+                <div class="tech-pill">
+                  Node.js
+                  <img
+                    src="../img/nodejs-logo-2.png"
+                    alt="Node.js logo"
+                    class="nodejs-logo tech-icon-logo"
+                  />
+                </div>
+                <div class="tech-pill">Express</div>
+                <div class="tech-pill">
+                  MongoDB
+                  <img
+                    src="../img/mongodb-logo-5.png"
+                    alt="MongoDB logo"
+                    class="vba-logo tech-icon-logo"
+                  />
+                </div>
+              </div>
+              <div class="footer-proj-container">Updated: Sep 16th, 2022</div>
+            </div>
 
-                        <div class="bio-element">
-                            <div class="bio-element-header">
-                                2011 - 2018
-                            </div>
-                            <div class="bio-element-body">
-                                <p>Mechanical Engineering B.Sc. at <a href="https://ufrj.br/" class="subtle-link external-link" target="_blank">UFRJ (Universidade Federal do Rio de Janeiro)</a> (Macaé, Rio de Janeiro, Brazil).</p>
-                            </div>
-                        </div>
+            <div class="proj-container">
+              <div class="header-proj-container">Blockchain Interaction</div>
+              <div class="body-proj-container">
+                <p>
+                  A page where a user will be able to interact with a smart
+                  contract on the Ethereum blockchain.
+                </p>
+              </div>
+              <div class="link-proj-container">
+                <a href="#projects-section" class="link-project-access"
+                  >Access (Soon)</a
+                >
+              </div>
+              <div class="techs-proj-container">
+                <div class="tech-pill">
+                  Solidity<img
+                    src="../img/solidity-logo-blue.png"
+                    alt="Solidity logo"
+                    class="nodejs-logo tech-icon-logo"
+                  />
+                </div>
+                <div class="tech-pill">
+                  Ethereum<img
+                    src="../img/ethereum-logo.png"
+                    alt="Ethereum logo"
+                    class="nodejs-logo tech-icon-logo"
+                  />
+                </div>
+                <div class="tech-pill">
+                  HTML <i class="fa-brands fa-html5 tech-icon-logo"></i>
+                </div>
+                <div class="tech-pill">
+                  CSS <i class="fa-brands fa-css3-alt tech-icon-logo"></i>
+                </div>
+                <div class="tech-pill">
+                  Vue.js
+                  <img
+                    src="../img/vuejs-logo.png"
+                    alt="Vue.js logo"
+                    class="vba-logo tech-icon-logo"
+                  />
+                </div>
+              </div>
 
-                        <div class="bio-element">
-                            <div class="bio-element-header">
-                                2014 - 2015
-                            </div>
-                            <div class="bio-element-body">
-                                <p>Mechanical Engineering scholarship at <a href="https://www.stevens.edu/" class="subtle-link external-link" target="_blank">Stevens Institute of Technology</a> (Hoboken, New Jersey, USA).</p>
-                            </div>
-                        </div>
+              <div class="footer-proj-container">Updated: (soon)</div>
+            </div>
 
-                        <div class="bio-element">
-                            <div class="bio-element-header">
-                                2019 - 2022
-                            </div>
-                            <div class="bio-element-body">
-                                <p>Logistics Analyst at <a href="https://www.neogas.com.br/" class="subtle-link external-link" target="_blank">NEOgás do Brasil</a> from Aug/2019 to Feb/2022.</p>
-                            </div>
-                        </div>
+            <div class="proj-container">
+              <div class="header-proj-container">This Portfolio Page</div>
+              <div class="body-proj-container">
+                <p>
+                  A portfolio page where I offer a brief view of my projects,
+                  bio, and other contents. Features to come:
+                  <a
+                    href="https://jdan.github.io/98.css/"
+                    class="subtle-link external-link"
+                    target="_blank"
+                    >Windows 98 Theme</a
+                  >,
+                  <a
+                    href="https://m3.material.io/"
+                    class="subtle-link external-link"
+                    target="_blank"
+                    >Material Design</a
+                  >
+                  Theme, and other projects.
+                </p>
+              </div>
+              <div class="link-proj-container">
+                <a
+                  href="https://github.com/betofc89/betofc89.github.io"
+                  target="_blank"
+                  class="link-project-access"
+                  >GitHub Repo</a
+                >
+              </div>
+              <div class="techs-proj-container">
+                <div class="tech-pill">
+                  HTML <i class="fa-brands fa-html5 tech-icon-logo"></i>
+                </div>
+                <div class="tech-pill">
+                  CSS <i class="fa-brands fa-css3-alt tech-icon-logo"></i>
+                </div>
+              </div>
+              <div class="footer-proj-container">Updated: Oct 21st, 2022</div>
+            </div>
+          </div>
+        </section>
 
-                    </div>
-                </section>
-                
-                <section id="misc-section">
-                    <br><br>
-                    <div class="section-stripe"></div>
-                    <h1>Misc</h1>
-                    <p>Parallel and past projects, hobbies, and other interesting things I'm involved with.</p>
-                    <div class="cont-projects">
+        <!-- BIO SECTION -->
 
-                        <div class="proj-container">
-                            <div class="header-proj-container">JavaScript course translation</div>
-                            <div class="body-proj-container">
-                                <p>Forked from <a href="https://github.com/javascript-tutorial/pt.javascript.info" target="_blank" class="subtle-link external-link">pt.javascript.info</a>, a translation endeavor of <a href="https://github.com/javascript-tutorial/en.javascript.info" target="_blank" class="subtle-link external-link">en.javascript.info</a> made by Portuguese speakers.</p>
-                            </div>
-                            <div class="link-proj-container">
-                                <a href="https://github.com/betofc89/pt.javascript.info" target="_blank" class="link-project-access">Access</a>
-                            </div>
-                            <div class="techs-proj-container">
-                                &nbsp;
-                            </div>
-                            <div class="footer-proj-container">
-                                Updated: Aug 13rd, 2022
-                            </div>
-                        </div>
+        <section id="bio-section">
+          <br /><br />
+          <div class="section-stripe"></div>
+          <h1>Bio</h1>
 
-                        
+          <!-- <div id="bio-elements-container"> -->
+          <div class="cont-projects">
+            <!-- <div class="bio-element">
+              <div class="bio-element-header">2003</div>
+              <div class="bio-element-body">
+                <p>First contact with HTML through written tutorials.</p>
+              </div>
+            </div> -->
+            <div class="proj-container">
+              <div class="header-proj-container">2003</div>
+              <div class="body-proj-container">
+                <p>First contact with HTML through written tutorials.</p>
+              </div>
+            </div>
 
-                        <div class="proj-container">
-                            <div class="header-proj-container">Excel data preparation</div>
-                            <div class="body-proj-container">
-                                <p>A VBA (Visual Basic for Applications) algorithm that organizes exported data from a third-party software into an organized Excel table.</p>
-                            </div>
-                            <div class="link-proj-container">
-                                <a href="https://github.com/betofc89/excel-data-preparation" target="_blank" class="link-project-access">Access</a>
-                            </div>
-                            <div class="techs-proj-container">
-                                <div class="tech-pill">Excel <i class="fa-solid fa-file-excel tech-icon-logo"></i></div>
-                                <div class="tech-pill">VBA <img src="../img/vba_logo.png" alt="VBA logo" class="vba-logo tech-icon-logo"></div>
-                            </div>
-                            <div class="footer-proj-container">
-                                Updated: Jun 27th, 2022
-                            </div>
-                        </div>
+            <div class="proj-container">
+              <div class="header-proj-container">2010 - 2011</div>
+              <div class="body-proj-container">
+                <p>
+                  Developed a simple web application using HTML, CSS,
+                  JavaScript, PHP, and MySQL.
+                </p>
+              </div>
+            </div>
 
-                        <div class="proj-container">
-                            <div class="header-proj-container">Testing HTML/CSS features</div>
-                            <div class="body-proj-container">
-                                <p>Test page in which I implement some of the many existing HTML and CSS features.</p> 
-                            </div>
-                            <div class="link-proj-container">
-                                <a href="./testing_html_css/testing_html_css.html" target="_blank" class="link-project-access">Access</a>
-                            </div>
-                            <div class="techs-proj-container">
-                                <div class="tech-pill">HTML <i class="fa-brands fa-html5 tech-icon-logo"></i></div>
-                                <div class="tech-pill">CSS <i class="fa-brands fa-css3-alt tech-icon-logo"></i></div>
-                            </div>
-                            <div class="footer-proj-container">
-                                Updated: Aug 13rd, 2022
-                            </div>
-                        </div>
+            <div class="proj-container">
+              <div class="header-proj-container">2011 - 2018</div>
+              <div class="body-proj-container">
+                <p>
+                  Mechanical Engineering B.Sc. at
+                  <a
+                    href="https://ufrj.br/"
+                    class="subtle-link external-link"
+                    target="_blank"
+                    >UFRJ (Universidade Federal do Rio de Janeiro)</a
+                  >
+                  (Macaé, Rio de Janeiro, Brazil).
+                </p>
+              </div>
+            </div>
 
-                        <div class="proj-container">
-                            <div class="header-proj-container">Mechanical Engineering final paper</div>
-                            <div class="body-proj-container">
-                                <p>My Mechanical Engineering course conclusion work. A hydraulic system is simulated in Matlab using an artificial neural networks package.</p>
-                            </div>
-                            <div class="link-proj-container">
-                                <a href="https://github.com/betofc89/tcc-eng-mec" target="_blank" class="link-project-access">Access</a>
-                            </div>
-                            <div class="techs-proj-container">
-                                <div class="tech-pill">Matlab <img src="../img/matlab_logo.png" alt="Matlab logo" class="matlab-logo tech-icon-logo"></div>
-                                <div class="tech-pill">Neural networks <img src="../img/neural_network_icon.png" alt="Neural network icon" class="neural-network-icon tech-icon-logo"></div>
-                            </div>
-                            <div class="footer-proj-container">
-                                Updated: Dec 19th, 2018
-                            </div>
-                        </div>
+            <div class="proj-container">
+              <div class="header-proj-container">2014 - 2015</div>
+              <div class="body-proj-container">
+                <p>
+                  Mechanical Engineering scholarship at
+                  <a
+                    href="https://www.stevens.edu/"
+                    class="subtle-link external-link"
+                    target="_blank"
+                    >Stevens Institute of Technology</a
+                  >
+                  (Hoboken, New Jersey, USA).
+                </p>
+              </div>
+            </div>
 
-                        <div class="proj-container">
-                            <div class="header-proj-container">Personal Notes on Web3 Dev</div>
-                            <div class="body-proj-container">
-                                <p>My personal notes where I write my understanding while I learn about blockchain, Solidity, and related topics to web3 in general.</p>
-                            </div>
-                            <div class="link-proj-container">
-                                <a href="#misc-section" target="_blank" class="link-project-access">Access (Soon)</a>
-                            </div>
-                            <div class="techs-proj-container">
-                                <div class="tech-pill">Solidity<img src="../img/solidity-logo-blue.png" alt="Solidity logo" class="nodejs-logo tech-icon-logo"></div>
-                                <div class="tech-pill">Ethereum<img src="../img/ethereum-logo.png" alt="Ethereum logo" class="nodejs-logo tech-icon-logo"></div>
-                                <div class="tech-pill">Notion <img src="../img/notion-logo.png" alt="Notion logo" class="vba-logo tech-icon-logo"></div>
-                            </div>
-                            <div class="footer-proj-container">
-                                Updated: Oct 22nd, 2022
-                            </div>
-                        </div>
+            <div class="proj-container">
+              <div class="header-proj-container">2019 - 2022</div>
+              <div class="body-proj-container">
+                <p>
+                  Logistics Analyst at
+                  <a
+                    href="https://www.neogas.com.br/en"
+                    class="subtle-link external-link"
+                    target="_blank"
+                    >NEOgás do Brasil</a
+                  >
+                  from Aug/2019 to Feb/2022.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-                    </div>
+        <!-- MISC SECTION -->
 
-                </section>
+        <section id="misc-section">
+          <br /><br />
+          <div class="section-stripe"></div>
+          <h1>Misc</h1>
+          <p>
+            Parallel and past projects, hobbies, and other interesting things
+            I'm involved with.
+          </p>
+          <div class="cont-projects">
+            <div class="proj-container">
+              <div class="header-proj-container">
+                JavaScript course translation
+              </div>
+              <div class="body-proj-container">
+                <p>
+                  Forked from
+                  <a
+                    href="https://github.com/javascript-tutorial/pt.javascript.info"
+                    target="_blank"
+                    class="subtle-link external-link"
+                    >pt.javascript.info</a
+                  >, a translation endeavor of
+                  <a
+                    href="https://github.com/javascript-tutorial/en.javascript.info"
+                    target="_blank"
+                    class="subtle-link external-link"
+                    >en.javascript.info</a
+                  >
+                  made by Portuguese speakers.
+                </p>
+              </div>
+              <div class="link-proj-container">
+                <a
+                  href="https://github.com/betofc89/pt.javascript.info"
+                  target="_blank"
+                  class="link-project-access"
+                  >Access</a
+                >
+              </div>
+              <div class="techs-proj-container">&nbsp;</div>
+              <div class="footer-proj-container">Updated: Aug 13rd, 2022</div>
+            </div>
 
-            </div> <!-- main-wrap ending -->
+            <div class="proj-container">
+              <div class="header-proj-container">Excel data preparation</div>
+              <div class="body-proj-container">
+                <p>
+                  A VBA (Visual Basic for Applications) algorithm that organizes
+                  exported data from a third-party software into an organized
+                  Excel table.
+                </p>
+              </div>
+              <div class="link-proj-container">
+                <a
+                  href="https://github.com/betofc89/excel-data-preparation"
+                  target="_blank"
+                  class="link-project-access"
+                  >Access</a
+                >
+              </div>
+              <div class="techs-proj-container">
+                <div class="tech-pill">
+                  Excel <i class="fa-solid fa-file-excel tech-icon-logo"></i>
+                </div>
+                <div class="tech-pill">
+                  VBA
+                  <img
+                    src="../img/vba_logo.png"
+                    alt="VBA logo"
+                    class="vba-logo tech-icon-logo"
+                  />
+                </div>
+              </div>
+              <div class="footer-proj-container">Updated: Jun 27th, 2022</div>
+            </div>
 
+            <div class="proj-container">
+              <div class="header-proj-container">Testing HTML/CSS features</div>
+              <div class="body-proj-container">
+                <p>
+                  Test page in which I implement some of the many existing HTML
+                  and CSS features.
+                </p>
+              </div>
+              <div class="link-proj-container">
+                <a
+                  href="./testing_html_css/testing_html_css.html"
+                  target="_blank"
+                  class="link-project-access"
+                  >Access</a
+                >
+              </div>
+              <div class="techs-proj-container">
+                <div class="tech-pill">
+                  HTML <i class="fa-brands fa-html5 tech-icon-logo"></i>
+                </div>
+                <div class="tech-pill">
+                  CSS <i class="fa-brands fa-css3-alt tech-icon-logo"></i>
+                </div>
+              </div>
+              <div class="footer-proj-container">Updated: Aug 13rd, 2022</div>
+            </div>
 
-        </main>
-        <footer>
-            <div id="footer-line"></div>
-            Roberto Cabral - 2022
-        </footer>
-    </body>
+            <div class="proj-container">
+              <div class="header-proj-container">
+                Mechanical Engineering final paper
+              </div>
+              <div class="body-proj-container">
+                <p>
+                  My Mechanical Engineering course conclusion work. A hydraulic
+                  system is simulated in Matlab using an artificial neural
+                  networks package.
+                </p>
+              </div>
+              <div class="link-proj-container">
+                <a
+                  href="https://github.com/betofc89/tcc-eng-mec"
+                  target="_blank"
+                  class="link-project-access"
+                  >Access</a
+                >
+              </div>
+              <div class="techs-proj-container">
+                <div class="tech-pill">
+                  Matlab
+                  <img
+                    src="../img/matlab_logo.png"
+                    alt="Matlab logo"
+                    class="matlab-logo tech-icon-logo"
+                  />
+                </div>
+                <div class="tech-pill">
+                  Neural networks
+                  <img
+                    src="../img/neural_network_icon.png"
+                    alt="Neural network icon"
+                    class="neural-network-icon tech-icon-logo"
+                  />
+                </div>
+              </div>
+              <div class="footer-proj-container">Updated: Dec 19th, 2018</div>
+            </div>
+
+            <div class="proj-container">
+              <div class="header-proj-container">
+                Personal Notes on Web3 Dev
+              </div>
+              <div class="body-proj-container">
+                <p>
+                  My personal notes where I write my understanding while I learn
+                  about blockchain, Solidity, and related topics to web3 in
+                  general.
+                </p>
+              </div>
+              <div class="link-proj-container">
+                <a
+                  href="#misc-section"
+                  target="_blank"
+                  class="link-project-access"
+                  >Access (Soon)</a
+                >
+              </div>
+              <div class="techs-proj-container">
+                <div class="tech-pill">
+                  Solidity<img
+                    src="../img/solidity-logo-blue.png"
+                    alt="Solidity logo"
+                    class="nodejs-logo tech-icon-logo"
+                  />
+                </div>
+                <div class="tech-pill">
+                  Ethereum<img
+                    src="../img/ethereum-logo.png"
+                    alt="Ethereum logo"
+                    class="nodejs-logo tech-icon-logo"
+                  />
+                </div>
+                <div class="tech-pill">
+                  Notion
+                  <img
+                    src="../img/notion-logo.png"
+                    alt="Notion logo"
+                    class="vba-logo tech-icon-logo"
+                  />
+                </div>
+              </div>
+              <div class="footer-proj-container">Updated: Oct 22nd, 2022</div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- main-wrap ending -->
+    </main>
+    <footer>
+      <div id="footer-line"></div>
+      Roberto Cabral - 2022
+    </footer>
+  </body>
 </html>
