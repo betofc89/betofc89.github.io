@@ -9,6 +9,10 @@ html {
     background-color: rgb(235, 235, 235);
 }
 
+p {
+    line-height: 1.75rem;
+}
+
 a {
     text-decoration: underline;
     color: blue;
@@ -87,6 +91,8 @@ main #main-wrap {
     margin-bottom: 4rem;
 }
 
+/* ------------------------------------- */
+
 #navbar-strip {
     position: sticky;
     top: 5px;
@@ -128,6 +134,53 @@ main #main-wrap {
     border-bottom-left-radius: 0.2rem;
 }
 
+@media only screen and (max-width: 400px) {
+    #navbar-strip {
+        position: sticky;
+        top: 5px;
+        /* background-color: black; */
+        /* background: linear-gradient(to right, black, rgba(0,0,0,0.07)); */
+        background-color: rgba(0,0,0,0.85);
+        /* background: linear-gradient(to right, transparent, black); */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        /* height: 60px; */
+        height: 4rem;
+        border-radius: 0.4rem;
+        border: 1px solid gray;
+        /* border-top: 1px solid #AAA; */
+        /* border-bottom: 1px solid #AAA; */
+        width: 100%;
+        margin: 0 auto;
+        
+        box-shadow: 0px 5px 8px grey;
+        z-index: 2;
+
+        flex-wrap: wrap;
+    }
+
+    .navbar-element {
+        background-color: rgb(245, 245, 245);
+        color: #555;
+        text-align: center;
+        margin: 0 0.25rem;
+        min-width: 80px;
+        padding: 0.25rem;
+        font-weight: bold;
+        transition: 0.2s all ease-in-out;
+        border-radius: 0.2rem;
+    
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        border-image: linear-gradient(to right, rgb(100, 100, 100), lightgray) 1;
+        border-bottom-left-radius: 0.2rem;
+    }
+}
+
+
+
 .navbar-element:hover {
     /* filter: grayscale(50%); */
     /* transform: scale(1.05, 1.05); */
@@ -147,6 +200,8 @@ main #main-wrap {
     text-decoration: none;
 }
 
+/* ------------------------------------- */
+
 .cont-projects {
     margin-top: 2rem;
     max-width: 100%;
@@ -157,6 +212,8 @@ main #main-wrap {
     row-gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
+
+/* ------------------------------------- */
 
 .proj-container {
     display: flex;
@@ -169,6 +226,7 @@ main #main-wrap {
     box-shadow: 0px 0px 4px 0px rgb(128, 128, 128);
     transition: 0.2s all ease-in-out;
     /* transform: scale(0.99, 0.99); */
+    max-width: 372px;
 }
 
 .proj-container:hover {
@@ -180,7 +238,7 @@ main #main-wrap {
 .proj-container:active {
     background-color: rgb(245, 245, 245);
     box-shadow: 0px 0px 5px 2px rgb(128, 128, 128);
-    transform: scale(0.99, 0.99);
+    /* transform: scale(0.99, 0.99); */
 }
 
 .proj-container:hover .header-proj-container {
@@ -276,7 +334,7 @@ main #main-wrap {
 }
 
 .tech-icon-logo {
-    margin-right: 0.5rem;
+    margin-right: 0rem;
     filter: opacity(0.75) saturate(0);
     transition: 0.2s all ease-in-out;
 }
@@ -297,9 +355,9 @@ main #main-wrap {
     color: #286e44;
 }
 
-.matlab-logo, .neural-network-icon, .vba-logo {
-    width: 20px;
-    height: 20px;
+.matlab-logo, .neural-network-icon, .vba-logo, .nodejs-logo {
+    width: 16px;
+    height: 16px;
     filter: opacity(0.75) saturate(0);
     vertical-align: middle;
 }
@@ -311,6 +369,17 @@ main #main-wrap {
 .neural-network-icon {
     transform: scale(0.75, 0.75);
     filter: opacity(0.75) saturate(0);
+}
+
+.tech-pill {
+    background-color: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 10px;
+    /* color: white; */
+    display: inline-block;
+    border: 1px solid #ccc;
+    margin-right: 0.2rem;
+    margin-bottom: 0.4rem;
 }
 
 a.link-no-color {
@@ -374,6 +443,7 @@ a.link-no-color {
 .bio-element-body {
     /* background-color: orange; */
     padding: 0.5rem 1rem 0.5rem 1rem;
+    line-height: 1.75rem;
 }
 
 .bio-element p {
