@@ -19,7 +19,9 @@ if (
 function mudarTema() {
   if (document.documentElement.attributes["data-theme"].value != "dark") {
     document.documentElement.setAttribute("data-theme", "dark");
+    toggleSwitch.checked = true;
   } else {
     document.documentElement.setAttribute("data-theme", "light");
+    toggleSwitch.checked = false;
   }
 }

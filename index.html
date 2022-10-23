@@ -24,6 +24,7 @@
             <div class="slider round"></div>
           </label>
         </div>
+        <div class="config-button"></div>
 
         <!-- O script abaixo precisou ser colocado aqui nesta posição porque o mesmo não estava conseguindo enxergar o elemento de id "cb-dark-theme" se este script fosse colocado dentro da tag head. -->
         <script src="./script-dark-switch.js"></script>
@@ -51,11 +52,78 @@
             >. I'm currently open to job offerings.
           </p>
           <p>The navbar below may help you navigate through that page.</p>
+
+          <div class="modal-backdrop">
+            <div class="modal-window">
+              <!-- <span class="modal-close-button">&times;</span> -->
+              <div class="modal-content">
+                <div class="modal-content-controls">
+                  <div class="control-box">
+                    <input type="checkbox" name="" id="cbShadow" />
+                    <label for="cbShadow">Shadow</label>
+                  </div>
+                  <div class="control-box">
+                    <span>Sun angle</span>
+                    <div class="slidecontainer">
+                      <input
+                        type="range"
+                        min="0"
+                        max="360"
+                        value="90"
+                        id="sliderShadow"
+                        step="15"
+                      />
+                    </div>
+                  </div>
+                  <div class="control-box">
+                    <span>Element elevation</span>
+                    <div class="slidecontainer">
+                      <input
+                        type="range"
+                        min="0"
+                        max="20"
+                        value="5"
+                        id="sliderElementsElevation"
+                        step="1"
+                      />
+                    </div>
+                  </div>
+                  <div class="control-box">
+                    <input type="checkbox" name="" id="cbBorderRadius" />
+                    <label for="cbBorderRadius">Border radius</label>
+                  </div>
+                </div>
+                <!-- end modal-content-controls -->
+                <div class="modal-content-body">
+                  <div id="sun-path">
+                    <div id="sun-object" onclick="mudarTema()"></div>
+                    <div id="angle-object"></div>
+                    <div id="square-shadow">
+                      <div class="header-proj-container">Lorem Ipsum</div>
+                      <div class="body-proj-container">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Numquam assumenda cupiditate labore, consequuntur
+                        itaque.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end modal-contant-body -->
+                <div class="modal-content-close-section">
+                  <div class="modal-close-button">Close</div>
+                </div>
+              </div>
+              <!-- end modal-content -->
+            </div>
+          </div>
         </section>
+
+        <script src="./script-shadow-change.js"></script>
+        <script src="./script-open-modal.js"></script>
 
         <!-- <hr> -->
 
-        <div id="navbar-strip">
+        <div id="navbar">
           <a href="#projects-section">
             <div class="navbar-element">Projects</div>
           </a>
@@ -68,7 +136,7 @@
             <div class="navbar-element">Misc</div>
           </a>
         </div>
-        <!-- navbar-strip ending -->
+        <!-- navbar ending -->
 
         <!-- PROJECTS SECTION -->
 

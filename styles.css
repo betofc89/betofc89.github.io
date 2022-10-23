@@ -1,5 +1,6 @@
 :root {
   --primary-color: rgb(232, 232, 232);
+  --primary-color-square-shadow: rgb(225, 225, 225);
   --font-color: #444;
   --font-color-lighter: #808080;
   --font-color-hover: #999;
@@ -11,7 +12,12 @@
   --element-header-bg-color-hover: rgb(51, 51, 51);
   --element-header-font-color: rgb(255, 255, 255);
 
-  --box-shadow-color: rgb(128, 128, 128);
+  --box-shadow-alpha: 1;
+  --box-shadow-color: rgba(128, 128, 128, var(--box-shadow-alpha));
+  --box-shadow-x: 0px;
+  --box-shadow-y: 0px;
+  --box-shadow-blur-radius: 0px;
+  --box-shadow-spread-radius: 0px;
   --section-stripe-box-shadow-color: rgba(128, 128, 128, 1);
 
   --border-color: rgb(169, 169, 169);
@@ -32,11 +38,33 @@
   --thematic-gradient-color-1-unhovered: rgb(100, 100, 100);
   --thematic-gradient-color-2-unhovered: rgb(211, 211, 211);
 
-  --navbar-strip-bg-color: rgba(0, 0, 0, 0.85);
+  --navbar-bg-color: rgba(210, 210, 210, 1);
+
+  /* ---------------------------------------------------------------------- */
+  /* config modal */
+
+  --sun-path-radius: 100px;
+  --sun-object-radius: 15px;
+
+  --sun-object-position-x: calc(
+    var(--sun-path-radius) * 2 - var(--sun-object-radius)
+  );
+  --sun-object-position-y: calc(
+    var(--sun-path-radius) - var(--sun-object-radius)
+  );
+
+  --sun-icon: url("./img/sun-icon.svg");
+  --sun-icon-bg-color: rgb(253, 221, 115);
+
+  --modal-close-button-bg-color: var(--navbar-bg-color);
+  --modal-close-button-bg-color-hover: rgba(220, 220, 220, 1);
+
+  --border-radius: 0px;
 }
 
 [data-theme="dark"] {
   --primary-color: #1b1b1b;
+  --primary-color-square-shadow: var(--primary-color);
   --font-color: #fff;
   --font-color-lighter: #808080;
   --font-color-hover: #999;
@@ -48,8 +76,13 @@
   --element-header-bg-color-hover: rgb(51, 51, 51);
   --element-header-font-color: rgb(255, 255, 255);
 
-  --box-shadow-color: rgba(128, 128, 128, 0); /* Adicionei um alpha igual a 0 */
-  --section-stripe-box-shadow-color: rgba(128, 128, 128, 0);
+  /* --box-shadow-alpha: 1; */
+  --box-shadow-color: rgba(64, 64, 64, var(--box-shadow-alpha));
+  /* --box-shadow-x: 0px; */
+  /* --box-shadow-y: 5px; */
+  /* --box-shadow-blur-radius: 3px; */
+  /* --box-shadow-spread-radius: 0px; */
+  --section-stripe-box-shadow-color: rgba(128, 128, 128, 1);
 
   --border-color: rgb(65, 65, 65);
   --border-color-lighter: rgb(35, 35, 35);
@@ -69,10 +102,36 @@
   --thematic-gradient-color-1-unhovered: rgb(100, 100, 100);
   --thematic-gradient-color-2-unhovered: rgb(211, 211, 211);
 
-  --navbar-strip-bg-color: rgba(85, 85, 85, 0.85);
+  --navbar-bg-color: rgba(85, 85, 85, 0.85);
+
+  /* ---------------------------------------------------------------------- */
+  /* config modal */
+
+  /* --sun-path-radius: 100px; */
+  /* --sun-object-radius: 15px; */
+
+  /* --sun-object-position-x: calc(
+    var(--sun-path-radius) * 2 - var(--sun-object-radius)
+  );
+  --sun-object-position-y: calc(
+    var(--sun-path-radius) - var(--sun-object-radius)
+  ); */
+
+  --sun-icon: url("./img/moon-icon.svg");
+  --sun-icon-bg-color: #7866bb;
+
+  --modal-close-button-bg-color: var(--navbar-bg-color);
+  --modal-close-button-bg-color-hover: rgba(115, 115, 115, 0.85);
+
+  /* --border-radius: 0px; */
 }
 
 /* ------------------------------------- */
+
+.slidecontainer {
+  /* background-color: red; */
+  /* transform: rotate(90deg); */
+}
 
 * {
   box-sizing: border-box;
@@ -160,7 +219,8 @@ p {
 
 .slider:before {
   background-color: #fff;
-  background-image: url("./img/sun-icon.svg");
+  background-image: var(--sun-icon);
+  /* background-image: url("./img/sun-icon.svg"); */
   background-size: 1rem;
   background-repeat: no-repeat;
   background-position: center;
@@ -212,6 +272,230 @@ input:checked + .slider:before {
   }
 }
 /* ------------------------------------- */
+/* CONFIG BUTTON */
+
+.config-button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  /* background-color: red; */
+  background: url("./img/settings.svg") no-repeat white;
+  /* background-blend-mode: multiply; */
+  background-position: center;
+  background-size: 1rem;
+  box-shadow: 0 0 5px 3px rgba(128, 128, 128, 1);
+
+  position: fixed;
+  top: 10px;
+  right: 80px;
+
+  /* box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.25); */
+
+  cursor: pointer;
+}
+
+/* @media only screen and (max-width: 400px) { */
+/* .config-button {
+    width: 48px;
+    height: 48px;
+    background-size: 1.5rem;
+    position: fixed;
+    top: unset;
+
+    right: 10px;
+    bottom: 10px;
+    z-index: 3;
+  } */
+/* } */
+
+@media only screen and (max-width: calc(1024px)) {
+  /* Se o tamanho da tela for menor que um valor calculado, prender botão no bottom. */
+  .config-button {
+    width: 48px;
+    height: 48px;
+    background-size: 1.5rem;
+
+    position: fixed;
+    top: unset;
+    right: 10px;
+    bottom: 10px;
+    z-index: 3;
+  }
+}
+
+/* ------------------------------------- */
+
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  /* padding-top: 30px; */
+}
+
+.modal-window {
+  background-color: var(--primary-color);
+  /* width: 50%; */
+  /* height: 50%; */
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  position: absolute;
+  /* margin: 0 auto; */
+  /* margin: 30px; */
+  top: 10px;
+  right: 10px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  padding: 20px;
+}
+
+.modal-content-controls {
+  position: relative;
+  /* margin: 0 auto; */
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+
+  /* height: 50%; */
+  /* display: block; */
+  /* width: auto; */
+}
+
+.control-box {
+  /* background-color: var(--navbar-bg-color); */
+  background-color: var(--element-bg-color);
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+}
+
+.modal-content-body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: 10px; */
+}
+
+#sun-path {
+  margin: 30px 0px;
+  /* background-color: green; */
+  width: calc(var(--sun-path-radius) * 2);
+  height: calc(var(--sun-path-radius) * 2);
+  border-radius: 50%;
+  border: 2px dashed lightgrey;
+  position: relative;
+}
+
+#sun-object,
+#angle-object {
+  width: calc(var(--sun-object-radius) * 2);
+  height: calc(var(--sun-object-radius) * 2);
+  border-radius: 50%;
+  /* background-color: black; */
+  background: var(--sun-icon) var(--sun-icon-bg-color);
+  /* background: url("./img/sun-icon.svg") radial-gradient(red, blue); */
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  left: var(--sun-object-position-x);
+  top: var(--sun-object-position-y);
+
+  /* top: calc(100px - 10px); */
+  /* left: calc(200px - 10px); */
+  cursor: pointer;
+}
+
+#angle-object {
+  left: var(--angle-object-position-x);
+  top: var(--angle-object-position-y);
+  /* background: yellow; */
+  background: unset;
+  border-radius: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: smaller;
+  cursor: unset;
+}
+
+#square-shadow {
+  display: flex;
+  /* justify-content: flex-end; */
+  flex-direction: column;
+
+  width: 50px;
+  height: 50px;
+  background-color: var(--element-bg-color);
+  position: absolute;
+  border-radius: var(--border-radius);
+  top: 75px;
+  left: 75px;
+  /* display: block; */
+  box-shadow: var(--box-shadow-x) var(--box-shadow-y)
+    var(--box-shadow-blur-radius) var(--box-shadow-spread-radius)
+    var(--box-shadow-color);
+}
+
+#square-shadow .header-proj-container {
+  font-size: 3px;
+  padding: 5px;
+  height: 15px;
+  width: 100%;
+  border-bottom-width: 2px;
+  /* border-radius: unset; */
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+#square-shadow .body-proj-container {
+  font-size: 3px;
+  padding: 5px;
+  /* height: 15px; */
+  width: 100%;
+  line-height: unset;
+  overflow: hidden;
+  text-align: left;
+  /* border-bottom-width: 2px; */
+}
+
+.modal-content-close-section {
+  /* background: green; */
+  display: inline-block;
+  /* margin: 0 auto; */
+  /* position: absolute; */
+  width: 100%;
+}
+
+.modal-close-button {
+  background-color: var(--modal-close-button-bg-color);
+  /* font-weight: bolder; */
+  margin: auto;
+  cursor: pointer;
+  width: 50%;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.modal-close-button:hover {
+  background-color: var(--modal-close-button-bg-color-hover);
+}
+
+/* ------------------------------------- */
+
+.slidercontainer {
+}
+
+/* ------------------------------------- */
 
 a.subtle-link {
   color: var(--font-color);
@@ -260,21 +544,24 @@ a.link-no-color {
 
 /* ------------------------------------- */
 
-#navbar-strip {
+#navbar {
   position: sticky;
   top: 5px;
-  background-color: var(--navbar-strip-bg-color);
+  background-color: var(--navbar-bg-color);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   height: 4rem;
-  border-radius: 0.4rem;
+  border-radius: var(--border-radius);
   border: 1px solid var(--border-color-lighter);
   width: 100%;
   margin: 0 auto;
 
-  box-shadow: 0px 5px 8px var(--box-shadow-color);
+  /* box-shadow: 0px 3px 3px 0px var(--box-shadow-color); */
+  box-shadow: var(--box-shadow-x) var(--box-shadow-y)
+    var(--box-shadow-blur-radius) var(--box-shadow-spread-radius)
+    var(--box-shadow-color);
   z-index: 2;
 }
 
@@ -302,17 +589,17 @@ a.link-no-color {
 
 @media only screen and (max-width: 400px) {
   /* Se o tamanho da tela for menor que 400px, faço alguns ajustes no navbar. */
-  #navbar-strip {
+  #navbar {
     position: sticky;
     top: 5px;
-    background-color: rgba(0, 0, 0, 0.85);
+    /* background-color: rgba(0, 0, 0, 0.85); */
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    height: 4rem;
+    height: 3rem;
     border-radius: 0.4rem;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     width: 100%;
     margin: 0 auto;
 
@@ -329,7 +616,7 @@ a.link-no-color {
     margin: 0 0.25rem;
     min-width: 80px;
     padding: 0.25rem;
-    font-weight: bold;
+    font-weight: normal;
     transition: 0.2s all ease-in-out;
     border-radius: 0.2rem;
 
@@ -357,7 +644,7 @@ a.link-no-color {
     1;
 }
 
-#navbar-strip a {
+#navbar a {
   text-decoration: none;
 }
 
@@ -373,28 +660,52 @@ a.link-no-color {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
+@media only screen and (max-width: 668px) {
+  .cont-projects {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    grid-template-columns: unset;
+  }
+}
+
 /* ------------------------------------- */
 
 .proj-container {
   display: flex;
-  justify-content: flex-end;
   flex-direction: column;
+  justify-content: flex-end;
+  max-width: 372px;
+
   background-color: var(--element-bg-color);
   border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
-  box-shadow: 0px 0px 4px 0px var(--box-shadow-color);
-  transition: 0.2s all ease-in-out;
-  max-width: 372px;
+  border-radius: var(--border-radius);
+  /* box-shadow: 0px 0px 4px 0px var(--box-shadow-color); */
+  box-shadow: var(--box-shadow-x) var(--box-shadow-y)
+    var(--box-shadow-blur-radius) var(--box-shadow-spread-radius)
+    var(--box-shadow-color);
+  /* transition: 0.2s all ease-in-out; */
 }
 
+@media only screen and (max-width: 668px) {
+  .proj-container {
+    width: 100%;
+    max-width: unset;
+  }
+}
 .proj-container:hover {
   background-color: var(--element-bg-color-hover);
   box-shadow: 0px 0px 10px 0px var(--box-shadow-color);
+  transition: 0.2s all ease-in-out;
 }
 
 .proj-container:active {
   background-color: var(--element-bg-color);
   box-shadow: 0px 0px 5px 2px var(--box-shadow-color);
+  transition: 0.2s all ease-in-out;
 }
 
 .proj-container:hover .header-proj-container {
@@ -419,7 +730,7 @@ a.link-no-color {
   color: var(--element-header-font-color);
   font-weight: bold;
   padding: 0.5rem 0rem 0.5rem 1rem;
-  border-radius: 0.5rem 0.5rem 0 0;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
   overflow: hidden;
   border-bottom-width: 5px;
   border-bottom-style: solid;
