@@ -60,6 +60,13 @@
   --modal-close-button-bg-color-hover: rgba(220, 220, 220, 1);
 
   --border-radius: 0px;
+
+  /* ---------------------------------------------------------------------- */
+  /* z-index */
+  --navbar-z-index: 2;
+  --config-button-z-index: 3;
+  --modal-backdrop-z-index: 4;
+  --modal-window-z-index: 5;
 }
 
 [data-theme="dark"] {
@@ -102,7 +109,7 @@
   --thematic-gradient-color-1-unhovered: rgb(100, 100, 100);
   --thematic-gradient-color-2-unhovered: rgb(211, 211, 211);
 
-  --navbar-bg-color: rgba(85, 85, 85, 0.85);
+  --navbar-bg-color: rgba(85, 85, 85, 1);
 
   /* ---------------------------------------------------------------------- */
   /* config modal */
@@ -131,6 +138,12 @@
 .slidecontainer {
   /* background-color: red; */
   /* transform: rotate(90deg); */
+}
+
+.stop-scrolling {
+  /* This class avoids scrolling of the screen. */
+  height: 100%;
+  overflow: hidden;
 }
 
 * {
@@ -289,6 +302,8 @@ input:checked + .slider:before {
   top: 10px;
   right: 80px;
 
+  z-index: var(--config-button-z-index);
+
   /* box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.25); */
 
   cursor: pointer;
@@ -320,17 +335,10 @@ input:checked + .slider:before {
     top: unset;
     right: 20px;
     bottom: 20px;
-    z-index: 3;
 
     box-shadow: 0 0 3px 3px rgba(176, 176, 176, 1);
 
     transition: transform 0.5s ease;
-  }
-
-  .config-button:active,
-  .config-button:hover,
-  .config-button:focus {
-    outline: none;
   }
 
   .rotate360deg {
@@ -357,7 +365,7 @@ input:checked + .slider:before {
   background-color: rgba(0, 0, 0, 0.4);
   width: 100%;
   height: 100%;
-  z-index: 3;
+  z-index: var(--modal-backdrop-z-index);
   /* padding-top: 30px; */
 }
 
@@ -378,7 +386,7 @@ input:checked + .slider:before {
   align-items: flex-start;
 
   padding: 20px;
-  z-index: 4;
+  z-index: var(--modal-window-z-index);
 }
 
 .modal-content {
@@ -404,6 +412,55 @@ input:checked + .slider:before {
   background-color: var(--element-bg-color);
   padding: 0.5rem;
   border-radius: var(--border-radius);
+}
+
+#cbShadow {
+  /* transition: 0.2s transform ease; */
+}
+
+.tremer {
+  animation-name: tremer;
+  animation-duration: 1s;
+}
+
+@keyframes tremer {
+  0% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    background-color: yellow;
+    left: 50px;
+    /* left: 100%; */
+    top: 0px;
+  }
+  50% {
+    background-color: blue;
+    left: 0px;
+    top: 0px;
+  }
+  75% {
+    background-color: green;
+    /* left: 50%; */
+    left: 25px;
+    top: 0px;
+  }
+  100% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+#circle-attention {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  display: none;
+  position: relative;
+  /* z-index: -1; */
 }
 
 .modal-content-body {
@@ -549,6 +606,20 @@ input:checked + .slider:before {
     /* height: 35px; */
   }
 
+  /* #cbShadow::before {
+    background-image: url("./img/arrow-right.svg");
+    background-size: 50px 50px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    content: "";
+    margin-left: -30px;
+
+    filter: invert(31%) sepia(95%) saturate(7472%) hue-rotate(358deg)
+      brightness(96%) contrast(123%);
+    vertical-align: middle;
+  } */
+
   #sliderShadow,
   #sliderElementsElevation {
     -webkit-appearance: none;
@@ -650,7 +721,7 @@ a.link-no-color {
   box-shadow: var(--box-shadow-x) var(--box-shadow-y)
     var(--box-shadow-blur-radius) var(--box-shadow-spread-radius)
     var(--box-shadow-color);
-  z-index: 2;
+  z-index: var(--navbar-z-index);
 }
 
 .navbar-element {
@@ -686,13 +757,13 @@ a.link-no-color {
     justify-content: space-evenly;
     align-items: center;
     height: 3rem;
-    border-radius: 0.4rem;
+    /* border-radius: 0.4rem; */
     /* border: 1px solid gray; */
     width: 100%;
     margin: 0 auto;
 
-    box-shadow: 0px 5px 8px var(--box-shadow-color);
-    z-index: 2;
+    /* box-shadow: 0px 5px 8px var(--box-shadow-color); */
+    z-index: var(--navbar-z-index);
 
     flex-wrap: wrap;
   }

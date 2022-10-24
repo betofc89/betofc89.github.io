@@ -21,6 +21,8 @@ let cbShadow = document.getElementById("cbShadow");
 
 let angleObject = document.getElementById("angle-object");
 
+let circleAttention = document.getElementById("circle-attention");
+
 const sunPathRadius = getComputedStyle(
   document.documentElement
 ).getPropertyValue("--sun-path-radius");
@@ -49,7 +51,11 @@ sliderElevation.oninput = function () {
 
   calculateValues();
   setValues();
-  logValues();
+  // logValues();
+};
+
+sliderElevation.ontouchstart = function () {
+  cbHighlight();
 };
 
 // When this element changes, an anonymous function is triggered.
@@ -59,7 +65,17 @@ sliderShadow.oninput = function () {
 
   calculateValues();
   setValues();
-  logValues();
+  // logValues();
+};
+
+/* sliderShadow.onclick = function () {
+  console.log("click");
+  cbHighlight();
+}; */
+
+sliderShadow.ontouchstart = function () {
+  // console.log("touch");
+  cbHighlight();
 };
 
 cbBorderRadius.onchange = function () {
@@ -95,7 +111,7 @@ function calculateValues() {
   // the standard trigonometric cycle, I multiplied the coordX to -1.
   coordX = elemElevation * Math.cos(sunAngleRad).toFixed(2) * -1;
   coordY = elemElevation * Math.sin(sunAngleRad).toFixed(2);
-  console.log("sunPathRadius" + sunPathRadius);
+  // console.log("sunPathRadius" + sunPathRadius);
   sun_coordX =
     parseInt(sunPathRadius) +
     parseInt(sunPathRadius) * Math.cos(sunAngleRad).toFixed(2) -
@@ -144,4 +160,15 @@ function logValues() {
   console.log("sunAngle: " + sunAngle);
   console.log(`(coordX, coordY): (${coordX},${coordY})`);
   console.log("- - - - - - - -");
+}
+
+function cbHighlight() {
+  if (!cbShadow.checked && !circleAttention.classList.contains("tremer")) {
+    circleAttention.style.display = "inline-block";
+    circleAttention.classList.add("tremer");
+    window.setTimeout(() => {
+      circleAttention.classList.remove("tremer");
+      circleAttention.style.display = "none";
+    }, 1000);
+  }
 }

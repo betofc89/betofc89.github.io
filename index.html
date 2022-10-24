@@ -13,6 +13,66 @@
   </head>
 
   <body>
+    <div class="modal-backdrop">
+      <div class="modal-window">
+        <div class="modal-content">
+          <div class="modal-content-controls">
+            <div class="control-box">
+              <input type="checkbox" name="" id="cbShadow" />
+              <label for="cbShadow">Shadow</label>
+              <div id="circle-attention"></div>
+            </div>
+            <div class="control-box">
+              <span>Sun angle</span>
+              <div class="slidecontainer">
+                <input
+                  type="range"
+                  min="0"
+                  max="360"
+                  value="90"
+                  id="sliderShadow"
+                  step="15"
+                />
+              </div>
+            </div>
+            <div class="control-box">
+              <span>Element elevation</span>
+              <div class="slidecontainer">
+                <input
+                  type="range"
+                  min="0"
+                  max="20"
+                  value="5"
+                  id="sliderElementsElevation"
+                  step="1"
+                />
+              </div>
+            </div>
+            <div class="control-box">
+              <input type="checkbox" name="" id="cbBorderRadius" />
+              <label for="cbBorderRadius">Border radius</label>
+            </div>
+          </div>
+          <div class="modal-content-body">
+            <div id="sun-path">
+              <div id="sun-object" onclick="mudarTema()"></div>
+              <div id="angle-object"></div>
+              <div id="square-shadow">
+                <div class="header-proj-container">Lorem Ipsum</div>
+                <div class="body-proj-container">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Numquam assumenda cupiditate labore, consequuntur itaque.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-content-close-section">
+            <div class="modal-close-button">Close</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <main>
       <div id="main-wrap">
         <h1 id="page-title">Roberto Cabral - Portfolio and Projects</h1>
@@ -53,9 +113,8 @@
           </p>
           <p>The navbar below may help you navigate through that page.</p>
 
-          <div class="modal-backdrop">
+          <!-- <div class="modal-backdrop">
             <div class="modal-window">
-              <!-- <span class="modal-close-button">&times;</span> -->
               <div class="modal-content">
                 <div class="modal-content-controls">
                   <div class="control-box">
@@ -93,7 +152,6 @@
                     <label for="cbBorderRadius">Border radius</label>
                   </div>
                 </div>
-                <!-- end modal-content-controls -->
                 <div class="modal-content-body">
                   <div id="sun-path">
                     <div id="sun-object" onclick="mudarTema()"></div>
@@ -108,14 +166,12 @@
                     </div>
                   </div>
                 </div>
-                <!-- end modal-contant-body -->
                 <div class="modal-content-close-section">
                   <div class="modal-close-button">Close</div>
                 </div>
               </div>
-              <!-- end modal-content -->
             </div>
-          </div>
+          </div> -->
         </section>
 
         <script src="./script-shadow-change.js"></script>
