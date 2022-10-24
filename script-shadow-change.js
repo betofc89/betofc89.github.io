@@ -135,7 +135,8 @@ function setValues() {
   declaration.setProperty("--angle-object-position-x", angleObj_coordX + "px");
   declaration.setProperty("--angle-object-position-y", angleObj_coordY + "px");
 
-  angleObject.innerHTML = sunAngle + "º";
+  // \xB0 é o código para símbolo de degree.
+  angleObject.innerHTML = sunAngle + "\xB0";
 }
 
 function logValues() {
