@@ -513,8 +513,8 @@ input:checked + .slider:before {
   background-color: var(--modal-close-button-bg-color-hover);
 }
 
-@media only screen and (max-width: 400px) {
-  /* Se o tamanho da tela for menor que 400px. */
+@media only screen and (max-width: 600px) {
+  /* Se o tamanho da tela for menor que 600px. */
   .modal-backdrop {
     background-color: rgba(0, 0, 0, 0.75);
   }
@@ -560,7 +560,8 @@ input:checked + .slider:before {
     appearance: none;
     width: 35px;
     height: 35px;
-    background: #04aa6d;
+    /* background: #04aa6d; */
+    background: rgb(42, 116, 253);
     cursor: pointer;
   }
 
