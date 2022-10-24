@@ -283,7 +283,7 @@ input:checked + .slider:before {
   /* background-blend-mode: multiply; */
   background-position: center;
   background-size: 1rem;
-  box-shadow: 0 0 5px 3px rgba(128, 128, 128, 1);
+  box-shadow: 0 0 2px 2px rgba(200, 200, 200, 1);
 
   position: fixed;
   top: 10px;
@@ -320,7 +320,24 @@ input:checked + .slider:before {
     right: 10px;
     bottom: 10px;
     z-index: 3;
+
+    box-shadow: 0 0 3px 3px rgba(176, 176, 176, 1);
+
+    transition: transform 0.5s ease;
   }
+
+  .rotate360deg {
+    transform: rotate(180deg);
+  }
+
+  /* @keyframes spin {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(180deg);
+    }
+  } */
 }
 
 /* ------------------------------------- */
@@ -354,6 +371,12 @@ input:checked + .slider:before {
   align-items: flex-start;
 
   padding: 20px;
+  z-index: 4;
+}
+
+.modal-content {
+  /* background: green; */
+  width: 100%;
 }
 
 .modal-content-controls {
@@ -490,9 +513,66 @@ input:checked + .slider:before {
   background-color: var(--modal-close-button-bg-color-hover);
 }
 
+@media only screen and (max-width: 400px) {
+  /* Se o tamanho da tela for menor que 400px. */
+  .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+
+  .modal-window {
+    width: 75%;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    padding: 5px;
+  }
+
+  .control-box {
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    padding: 1rem;
+    width: 100%;
+    vertical-align: middle;
+  }
+
+  .control-box input[type="checkbox"] {
+    /* width: 35px; */
+    /* height: 35px; */
+  }
+
+  #sliderShadow,
+  #sliderElementsElevation {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 35px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+  }
+
+  #sliderShadow::-webkit-slider-thumb,
+  #sliderElementsElevation::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 35px;
+    height: 35px;
+    background: #04aa6d;
+    cursor: pointer;
+  }
+
+  .inactive-slider::-webkit-slider-thumb {
+    background: grey !important;
+    cursor: not-allowed;
+  }
+}
 /* ------------------------------------- */
 
-.slidercontainer {
+.slidecontainer input {
+  width: 100%;
 }
 
 /* ------------------------------------- */

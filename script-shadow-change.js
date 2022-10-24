@@ -40,6 +40,8 @@ setValues();
 declaration.setProperty("--box-shadow-alpha", 0);
 sliderShadow.disabled = true;
 sliderElevation.disabled = true;
+sliderShadow.classList.add("inactive-slider");
+sliderElevation.classList.add("inactive-slider");
 
 // When this element changes, an anonymous function is triggered.
 sliderElevation.oninput = function () {
@@ -74,10 +76,16 @@ cbShadow.onchange = function () {
     declaration.setProperty("--box-shadow-alpha", 1);
     sliderShadow.disabled = false;
     sliderElevation.disabled = false;
+
+    sliderShadow.classList.remove("inactive-slider");
+    sliderElevation.classList.remove("inactive-slider");
   } else {
     declaration.setProperty("--box-shadow-alpha", 0);
     sliderShadow.disabled = true;
     sliderElevation.disabled = true;
+
+    sliderShadow.classList.add("inactive-slider");
+    sliderElevation.classList.add("inactive-slider");
   }
 };
 
