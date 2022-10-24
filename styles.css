@@ -308,11 +308,12 @@ input:checked + .slider:before {
   } */
 /* } */
 
-@media only screen and (max-width: calc(1024px)) {
+@media only screen and (max-width: 1024px) {
   /* Se o tamanho da tela for menor que um valor calculado, prender botão no bottom. */
   .config-button {
-    width: 48px;
-    height: 48px;
+    outline: none;
+    width: 58px;
+    height: 58px;
     background-size: 1.5rem;
 
     position: fixed;
@@ -324,6 +325,12 @@ input:checked + .slider:before {
     box-shadow: 0 0 3px 3px rgba(176, 176, 176, 1);
 
     transition: transform 0.5s ease;
+  }
+
+  .config-button:active,
+  .config-button:hover,
+  .config-button:focus {
+    outline: none;
   }
 
   .rotate360deg {
